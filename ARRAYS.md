@@ -1,11 +1,11 @@
 # Arrays
 ## Table of Content
-* [Arrays - Set Matrix Zeroes](#arrays-set-matrix-zeroes)
-* [Arrays - Pascal's Triangle](#arrays-pascals-triangle)
-* [Arrays - Next Permutation](#arrays-next-permutation)
-* [Arrays - Kadane’s Algorithm: Maximum Subarray Sum in an Array](#arrays-kadanes-algorithm-maximum-subarray-sum-in-an-array)
-* [Arrays - Sort Colors](#arrays-sort-colors)
-* [Arrays - Best Time to Buy and Sell Stock](#arrays-best-time-to-buy-and-sell-stock)
+* [Arrays - Set Matrix Zeroes](##arrays---set-matrix-zeroes)
+* [Arrays - Pascal's Triangle](#arrays---pascals-triangle)
+* [Arrays - Next Permutation](#arrays---next-permutation)
+* [Arrays - Kadane’s Algorithm: Maximum Subarray Sum in an Array](#arrays---kadanes-algorithm-maximum-subarray-sum-in-an-array)
+* [Arrays - Sort Colors](#arrays---sort-colors)
+* [Arrays - Best Time to Buy and Sell Stock](#arrays---best-time-to-buy-and-sell-stock)
 ## Arrays - Set Matrix Zeroes
 <div class="elfjS" data-track-load="description_content"><p>Given an <code>m x n</code> integer matrix <code>matrix</code>, if an element is <code>0</code>, set its entire row and column to <code>0</code>'s.</p>
 
