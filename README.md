@@ -1,5 +1,5 @@
 # 191_Codes
-<a class="no-underline hover:text-blue-s dark:hover:text-dark-blue-s truncate cursor-text hover:!text-[inherit]" href="/problems/set-matrix-zeroes/">Arrays - Set Matrix Zeroes</a>
+<h2>Arrays - Set Matrix Zeroes</h2>
 <div class="elfjS" data-track-load="description_content"><p>Given an <code>m x n</code> integer matrix <code>matrix</code>, if an element is <code>0</code>, set its entire row and column to <code>0</code>'s.</p>
 
 <p>You must do it <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in place</a>.</p>
