@@ -170,39 +170,7 @@ Furthermore, swapping <span class="math math-inline"><span class="katex"><span c
 Therefore, we simply need to reverse the numbers following <span class="math math-inline"><span class="katex"><span class="katex-mathml">a[i−1]a[i-1]</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord mathnormal">a</span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right: 0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right: 0.2222em;"></span></span><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span></span> to get the next smallest lexicographic permutation.</p>
 <p>The following animation will make things clearer:</p>
 <p><img src="https://leetcode.com/media/original_images/31_Next_Permutation.gif" alt="Next Permutation"></p>
-### Next Permutation
-```java
-public class Solution {
-  public void nextPermutation(int[] nums) {
-    int i = nums.length - 2;
-    while (i >= 0 && nums[i + 1] <= nums[i]) {
-      i--;
-    }
-    if (i >= 0) {
-      int j = nums.length - 1;
-      while (nums[j] <= nums[i]) {
-        j--;
-      }
-      swap(nums, i, j);
-    }
-    reverse(nums, i + 1);
-  }
-
-  private void reverse(int[] nums, int start) {
-    int i = start, j = nums.length - 1;
-    while (i < j) {
-      swap(nums, i, j);
-      i++;
-      j--;
-    }
-  }
-
-  private void swap(int[] nums, int i, int j) {
-    int temp = nums[i];
-    nums[i] = nums[j];
-    nums[j] = temp;
-  }
-}
+<code>public class Solution{public void nextPermutation(int[] nums){int i=nums.length-2;while(i>=0&&nums[i+1]<=nums[i]){i--;}if(i>=0){int j=nums.length-1;while(nums[j]<=nums[i]){j--;}swap(nums,i,j);}reverse(nums,i+1);}private void reverse(int[]nums,int start){int i=start,j=nums.length-1;while(i<j){swap(nums,i,j);i++;j--;}}private void swap(int[]nums,int i,int j){int temp=nums[i];nums[i]=nums[j];nums[j]=temp;}}</code>
 <p><strong>Complexity Analysis</strong></p>
 <ul>
 <li>
