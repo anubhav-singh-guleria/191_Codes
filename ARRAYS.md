@@ -1,9 +1,9 @@
 # Arrays
 ## Table of Content
-* [Arrays - Set Matrix Zeroes](##arrays---set-matrix-zeroes)
+* [Arrays - Set Matrix Zeroes](#arrays---set-matrix-zeroes)
 * [Arrays - Pascal's Triangle](#arrays---pascals-triangle)
 * [Arrays - Next Permutation](#arrays---next-permutation)
-* [Arrays - Kadane’s Algorithm: Maximum Subarray Sum in an Array](#arrays---kadanes-algorithm-maximum-subarray-sum-in-an-array)
+* [Arrays - Kadane’s Algorithm: Maximum Subarray Sum in an Array](#arrays---kadanes-algorithm--maximum-subarray-sum-in-an-array)
 * [Arrays - Sort Colors](#arrays---sort-colors)
 * [Arrays - Best Time to Buy and Sell Stock](#arrays---best-time-to-buy-and-sell-stock)
 ## Arrays - Set Matrix Zeroes
@@ -64,6 +64,9 @@
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Arrays - Pascal's Triangle
 <div class="elfjS" data-track-load="description_content"><p>Given an integer <code>numRows</code>, return the first numRows of <strong>Pascal's triangle</strong>.</p>
 
@@ -110,6 +113,9 @@
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> ans</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div></div></div>
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## Arrays - Next Permutation
 <div class="elfjS" data-track-load="description_content"><p>A <strong>permutation</strong> of an array of integers is an arrangement of its members into a sequence or linear order.</p>
@@ -217,6 +223,10 @@ Therefore, we simply need to reverse the numbers following <span class="math mat
 <p>Space complexity : <span class="math math-inline"><span class="katex"><span class="katex-mathml">O(1)O(1)</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord mathnormal" style="margin-right: 0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></span>. No extra space is used. In place replacements are done.</p>
 </li>
 </ul>
+
+## Go To
+[Table of Content](#table-of-content)
+
 
 ## Arrays - Kadane’s Algorithm : Maximum Subarray Sum in an Array
 <div class="elfjS" data-track-load="description_content"><p>Given an integer array <code>nums</code>, find the <span data-keyword="subarray-nonempty" class=" cursor-pointer relative text-dark-blue-s text-sm"><div class="popover-wrapper inline-block" data-headlessui-state=""><div><div aria-expanded="false" data-headlessui-state="" id="headlessui-popover-button-:r3n:"><div>subarray</div></div><div style="position: fixed; z-index: 40; inset: 0px auto auto 0px; transform: translate(285px, 178px);"></div></div></div></span> with the largest sum, and return <em>its sum</em>.</p>
@@ -522,6 +532,9 @@ Similarly, <code>dp[0][1]</code> can be updated as max between maximum sum subar
 </ul>
 </div>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Arrays - Sort Colors
 <div class="elfjS" data-track-load="description_content"><p>Given an array <code>nums</code> with <code>n</code> objects colored red, white, or blue, sort them <strong><a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a> </strong>so that objects of the same color are adjacent, with the colors in the order red, white, and blue.</p>
 
@@ -660,6 +673,9 @@ Similarly, <code>dp[0][1]</code> can be updated as max between maximum sum subar
 </span></span><span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
 <hr></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Arrays - Best Time to Buy and Sell Stock
 <div class="elfjS" data-track-load="description_content"><p>You are given an array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the <code>i<sup>th</sup></code> day.</p>
 
@@ -703,5 +719,8 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
 </span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> maxSoFar</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div>
+
+ ## Go To
+[Table of Content](#table-of-content)
 <p>*<code>maxCur = current maximum value</code></p>
 <p>*<code>maxSoFar = maximum value found so far</code></p></div>
