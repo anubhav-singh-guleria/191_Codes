@@ -546,10 +546,10 @@ Similarly, <code>dp[0][1]</code> can be updated as max between maximum sum subar
 <p><strong>Follow up:</strong>&nbsp;Could you come up with a one-pass algorithm using only&nbsp;constant extra space?</p>
 </div>
 <h3>Solution:</h3>
-<div class="FN9Jv WRmCx"><h1 id="intuition">Intuition</h1>
+<div class="FN9Jv WRmCx"><h4 id="intuition">Intuition</h4>
 
 <p><em>The problem requires us to sort an array of integers representing colors in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue. We are given that the colors red, white, and blue are represented by the integers 0, 1, and 2 respectively.</em></p>
-<h1 id="approach--dutch-national-flag-algorithm">Approach : <em><strong>Dutch National Flag algorithm</strong></em></h1>
+<h4 id="approach--dutch-national-flag-algorithm">Approach : <em><strong>Dutch National Flag algorithm</strong></em></h4>
 
 <ul>
 <li>
@@ -568,7 +568,7 @@ Similarly, <code>dp[0][1]</code> can be updated as max between maximum sum subar
 <blockquote>
 <p>The Dutch National Flag algorithm is called one-pass because it sorts the array in a single pass through the elements. The time complexity of the algorithm is O(n), where n is the size of the array.</p>
 </blockquote>
-<h1 id="complexity">Complexity</h1>
+<h4 id="complexity">Complexity</h4>
 <ul>
 <li>Time complexity: O(n)</li>
 </ul>
@@ -577,7 +577,7 @@ Similarly, <code>dp[0][1]</code> can be updated as max between maximum sum subar
 <li>Space complexity: O(1)</li>
 </ul>
 
-<h1 id="code">Code</h1>
+<h4 id="code">Code</h4>
 <div class="border-gray-3 dark:border-dark-gray-3 mb-6 overflow-hidden rounded-lg border"><div class="flex select-none bg-layer-2 dark:bg-dark-layer-2"></div><div class="px-3 py-2.5 bg-fill-3 dark:bg-dark-fill-3"><div class="group relative" translate="no"><pre style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none; padding: 0px; margin: 0px; overflow: auto; background: transparent;"><code class="language-cpp" style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, &quot;Courier New&quot;, monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none;"><span><span class="token" style="color: rgb(86, 156, 214);">class</span><span> </span><span class="token" style="color: rgb(78, 201, 176);">Solution</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">public</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span>
 </span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">void</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">sortColors</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span class="token" style="color: rgb(212, 212, 212);">&amp;</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
