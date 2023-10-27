@@ -1,4 +1,11 @@
 ## Arrays III Search a 2D Matrix
+## Table of Contents
+1. [Search a 2D Matrix](#arrays-iii-search-a-2d-matrix)
+2. [Power(x, n)](#arrays-iii-powx-n)
+3. [Majority Element](#arrays-iii-majority-element)
+4. [Majority Element II](#arrays-iii-majority-element-ii)
+5. [Unique Paths](#arrays-iii-unique-paths)
+6. [Reverse Pairs](#arrays-iii-reverse-pairs)
 <div class="elfjS" data-track-load="description_content"><p>You are given an <code>m x n</code> integer matrix <code>matrix</code> with the following two properties:</p>
 
 <ul>
