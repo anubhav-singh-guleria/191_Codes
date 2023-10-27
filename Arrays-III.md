@@ -1,5 +1,5 @@
 ## Arrays III Search a 2D Matrix
-## Table of Contents
+## Table of Content
 1. [Search a 2D Matrix](#arrays-iii-search-a-2d-matrix)
 2. [Power(x, n)](#arrays-iii-powx-n)
 3. [Majority Element](#arrays-iii-majority-element)
@@ -61,6 +61,9 @@
 </span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> matrix</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>r </span><span class="token" style="color: rgb(212, 212, 212);">/</span><span> m</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>r </span><span class="token" style="color: rgb(212, 212, 212);">%</span><span> m</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">==</span><span> target</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div>
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## Arrays III Pow(x, n)
 <div class="elfjS" data-track-load="description_content"><p>Implement <a href="http://www.cplusplus.com/reference/valarray/pow/" target="_blank">pow(x, n)</a>, which calculates <code>x</code> raised to the power <code>n</code> (i.e., <code>x<sup>n</sup></code>).</p>
@@ -139,6 +142,10 @@
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
 </div>
 
+## Go To
+[Table of Content](#table-of-content)
+
+
 ## Arrays III Majority Element
 <div class="elfjS" data-track-load="description_content"><p>Given an array <code>nums</code> of size <code>n</code>, return <em>the majority element</em>.</p>
 
@@ -213,6 +220,8 @@ Thus with our algorithm we can maintain production of pairs of different element
 <a href="https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm" target="_blank">https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm</a><br>
 <a href="https://gregable.com/2013/10/majority-vote-algorithm-find-majority.html" target="_blank">https://gregable.com/2013/10/majority-vote-algorithm-find-majority.html</a></p></div>
 
+## Go To
+[Table of Content](#table-of-content)
 
 ## Arrays III Majority Element II
 <div class="elfjS" data-track-load="description_content"><p>Given an integer array of size <code>n</code>, find all elements that appear more than <code>⌊ n/3 ⌋</code> times.</p>
@@ -310,6 +319,11 @@ public:
     }
 };
 ```
+
+## Go To
+[Table of Content](#table-of-content)
+
+
 ## Arrays III Unique Paths
 <div class="elfjS" data-track-load="description_content"><p>There is a robot on an <code>m x n</code> grid. The robot is initially located at the <strong>top-left corner</strong> (i.e., <code>grid[0][0]</code>). The robot tries to move to the <strong>bottom-right corner</strong> (i.e., <code>grid[m - 1][n - 1]</code>). The robot can only move either down or right at any point in time.</p>
 
@@ -522,6 +536,10 @@ There's a small change that can allow us to optimize the space complexity down t
 <p><em><strong>Time Complexity :</strong></em> <strong><code>O(min(m,n))</code></strong> for C++, and <strong><code>O(m+n)</code></strong> for Python. We could do it in <code>O(min(m,n))</code> for python as well using technique used in C++.<br>
 <em><strong>Space Complexity :</strong></em> <strong><code>O(1)</code></strong></p>
 <hr></div>
+
+## Go To
+[Table of Content](#table-of-content)
+
 
 ## Arrays III Reverse Pairs
 <div class="elfjS" data-track-load="description_content"><p>Given an integer array <code>nums</code>, return <em>the number of <strong>reverse pairs</strong> in the array</em>.</p>
