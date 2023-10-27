@@ -1,3 +1,12 @@
+## Table of Content
+
+1. [Two Sum](#arrays-iv-two-sum)
+2. [4Sum](#arrays-iv-4sum)
+3. [Longest Consecutive Sequence](#arrays-iv-longest-consecutive-sequence)
+4. [Largest Subarray with 0 Sum](#arrays-iv-largest-subarray-with-0-sum)
+5. [Count the Number of Subarrays with Given XOR (K)](#arrays-iv-count-the-number-of-subarrays-with-given-xor-k)
+6. [Longest Substring Without Repeating Characters](#arrays-iv-longest-substring-without-repeating-characters)
+
 ## Arrays IV Two Sum
 <div class="elfjS" data-track-load="description_content"><p>Given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p>
 
