@@ -1,7 +1,12 @@
 # ARRAYS-II
 
 ## Table of Content
-
+1. [Rotate Image](#arrays---ii-rotate-image)
+2. [Merge Intervals](#arrays---ii-merge-intervals)
+3. [Merge Two Sorted Arrays Without Extra Space](#arrays---ii-merge-two-sorted-arrays-without-extra-space)
+4. [Find the Duplicate in an Array of n+1 Integers](#arrays---ii-find-the-duplicate-in-an-array-of-n1-integers)
+5. [Find the Repeating and Missing Numbers](#arrays---ii-find-the-repeating-and-missing-numbers)
+6. [Global and Local Inversions](#arrays---ii-global-and-local-inversions)
 ## Arrays - II Rotate Image
 <div class="elfjS" data-track-load="description_content"><p>You are given an <code>n x n</code> 2D <code>matrix</code> representing an image, rotate the image by <strong>90</strong> degrees (clockwise).</p>
 
@@ -476,3 +481,209 @@ Since 5 is appearing twice and 8 is missing
 </div>
 
 ### Solution
+#### Approach
+<!-- Describe your approach to solving the problem. -->
+<div _ngcontent-serverapp-c203="" class="content-desc"><p>The approach is to store the frequency of each array element in a 1-D array. Then we can look for the number (index) in the array. The number whose count is 2 is the number that is repeated twice, and the number which is appearing 0 times is the missing number.</p><p>&nbsp;</p><p><strong>The steps are as follows:-</strong></p><p>&nbsp;</p><p><strong>//</strong> Function to find the Missing And Repeating Numbers</p><p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function </strong>findMissingRepeatingNumbers<strong>(int[] A, int N):</strong><br>&nbsp;</p><ol><li>Int 'N' be the size of array ‘A’.</li><li>Initialize a 1-D array ‘count’ of size ‘N + 1’, where each index stores the frequency of that number in the array ‘A’.</li><li>Iterate over array ‘A’ from index ‘0’ to index ‘N - 1’ using variable ‘i’:<ul><li>Increment count[A[i]].</li></ul></li><li>Initialize two variables ‘missing’ &amp; ‘repeating’, storing the missing integer and repeating integer, respectively.</li><li>Iterate over array ‘count’ from index ‘1’ to index ‘N’ using variable ‘i’:<ul><li>If count[i] == 2:<ul><li>Assign ‘repeating’ to ‘i’</li></ul></li><li>If count[i] == 0:<ul><li>Assign ‘missing’ to ‘i’</li></ul></li></ul></li><li>Return pair(‘repeating’, ‘missing’)</li></ol></div>
+
+#### Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+            O( N )
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+            O( N )
+
+#### Code
+```
+vector<int> findMissingRepeatingNumbers(vector < int > a) {
+    int n = a.size(); // Size of array 'a'
+    
+    vector<int> count(n + 1, 0); // 'count' array
+    for(int i = 0; i < n; ++i) {
+        // Incrementing the frequency of current element
+        ++count[a[i]];
+    }
+    int missing, repeating;
+    for(int i = 1; i <= n; ++i) {
+        if(count[i] == 0) missing = i;
+        else if(count[i] == 2) repeating = i;
+    }
+    vector<int> ans;
+    ans.push_back(repeating);
+    ans.push_back(missing);
+    return ans;
+}
+```
+
+## Arrays - II Global and Local Inversions
+<div class="elfjS" data-track-load="description_content"><p>You are given an integer array <code>nums</code> of length <code>n</code> which represents a permutation of all the integers in the range <code>[0, n - 1]</code>.</p>
+
+<p>The number of <strong>global inversions</strong> is the number of the different pairs <code>(i, j)</code> where:</p>
+
+<ul>
+	<li><code>0 &lt;= i &lt; j &lt; n</code></li>
+	<li><code>nums[i] &gt; nums[j]</code></li>
+</ul>
+
+<p>The number of <strong>local inversions</strong> is the number of indices <code>i</code> where:</p>
+
+<ul>
+	<li><code>0 &lt;= i &lt; n - 1</code></li>
+	<li><code>nums[i] &gt; nums[i + 1]</code></li>
+</ul>
+
+<p>Return <code>true</code> <em>if the number of <strong>global inversions</strong> is equal to the number of <strong>local inversions</strong></em>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> nums = [1,0,2]
+<strong>Output:</strong> true
+<strong>Explanation:</strong> There is 1 global inversion and 1 local inversion.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> nums = [1,2,0]
+<strong>Output:</strong> false
+<strong>Explanation:</strong> There are 2 global inversions and 1 local inversion.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>n == nums.length</code></li>
+	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+	<li><code>0 &lt;= nums[i] &lt; n</code></li>
+	<li>All the integers of <code>nums</code> are <strong>unique</strong>.</li>
+	<li><code>nums</code> is a permutation of all the numbers in the range <code>[0, n - 1]</code>.</li>
+</ul>
+</div>
+
+### Solution
+<div class="FN9Jv WRmCx"><h4 id="intuition">Intuition</h4>
+
+<p>We have solve this question using Two Approaches.</p>
+<ol>
+<li>Solved Using Array(Two Nested Loop). Brute Force Approach.</li>
+<li>Solved using Array + Divide and Conquer + Merge Sort. Optimized Approach.</li>
+</ol>
+<h4 id="approach">Approach</h4>
+
+<p>We can easily understand the All the approaches by seeing the code which is easy to understand with comments.</p>
+<h4 id="complexity">Complexity</h4>
+<ul>
+<li>Time complexity:</li>
+</ul>
+
+<p>Time complexity is given in code comment.</p>
+<ul>
+<li>Space complexity:</li>
+</ul>
+
+<p>Space complexity is given in code comment.</p>
+<h4 id="code">Code</h4>
+<div class="mb-6 rounded-lg px-3 py-2.5 font-menlo text-sm bg-fill-3 dark:bg-dark-fill-3"><div class="group relative" translate="no"><pre style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none; padding: 0px; margin: 0px; overflow: auto; background: transparent;"><code class="language-cpp" style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, &quot;Courier New&quot;, monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none;"><span><span class="token" style="color: rgb(106, 153, 85);">/*
+</span></span><span>
+</span><span>    Time Complexity : O(N^2), where N is the size of the array. As we check for possible pair which can satisfy
+</span><span>    the given condition, and the total number of pairs are : N*(N–1)/2.
+</span><span>
+</span><span>    Space complexity : O(1), Constant space.
+</span><span>
+</span><span>    Solved Using Array(Two Nested Loop). Brute Force Approach.
+</span><span>
+</span><span>    Note : This approach is Giving TLE.
+</span><span>
+</span><span><span class="token" style="color: rgb(106, 153, 85);">*/</span><span>
+</span></span><span>
+</span><span>
+</span><span><span></span><span class="token" style="color: rgb(106, 153, 85);">/***************************************** Approach 1 *****************************************/</span><span>
+</span></span><span>
+</span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">class</span><span> </span><span class="token" style="color: rgb(78, 201, 176);">Solution</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">public</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">reversePairs</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span class="token" style="color: rgb(212, 212, 212);">&amp;</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> n </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">size</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">long</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">long</span><span> reversePairsCount </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> i</span><span class="token" style="color: rgb(212, 212, 212);">=</span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> i</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span>n</span><span class="token" style="color: rgb(212, 212, 212);">-</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> i</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> j</span><span class="token" style="color: rgb(212, 212, 212);">=</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">+</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> j</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span>n</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> j</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>                </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>nums</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">2</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">long</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">long</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span>nums</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>j</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>                    reversePairsCount</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>                </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> reversePairsCount</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span>
+</span><span>
+</span><span>
+</span><span>
+</span><span>
+</span><span>
+</span><span><span></span><span class="token" style="color: rgb(106, 153, 85);">/*
+</span></span><span>
+</span><span>    Time Complexity : O(NlogN), Each recursive call to performs two recursive calls on subslices of size N/2 and
+</span><span>    One linear scans of length &lt;= N. Therefore, the time complexity of the divide &amp; conquer approach can be
+</span><span>    represented by the following recurrence relation: T(N)=2T(N/2)+N. Where N is the size of the Array(nums).
+</span><span>
+</span><span>    Space Complexity : O(N), Recursion Stack Space O(logN) + Array(temp) space O(N). 
+</span><span>
+</span><span>    Solved using Array + Divide and Conquer + Merge Sort. Optimized Approach.
+</span><span>
+</span><span><span class="token" style="color: rgb(106, 153, 85);">*/</span><span>
+</span></span><span>
+</span><span>
+</span><span><span></span><span class="token" style="color: rgb(106, 153, 85);">/***************************************** Approach 2 *****************************************/</span><span>
+</span></span><span>
+</span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">class</span><span> </span><span class="token" style="color: rgb(78, 201, 176);">Solution</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">private</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span> 
+</span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">void</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">merge</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span class="token" style="color: rgb(212, 212, 212);">&amp;</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> low</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> mid</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> high</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">&amp;</span><span> reversePairsCount</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> j </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> mid</span><span class="token" style="color: rgb(212, 212, 212);">+</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> i</span><span class="token" style="color: rgb(212, 212, 212);">=</span><span>low</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> i</span><span class="token" style="color: rgb(212, 212, 212);">&lt;=</span><span>mid</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> i</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">while</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>j</span><span class="token" style="color: rgb(212, 212, 212);">&lt;=</span><span>high </span><span class="token" style="color: rgb(212, 212, 212);">&amp;&amp;</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">2</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">long</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">long</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span>nums</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>j</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>                j</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>            reversePairsCount </span><span class="token" style="color: rgb(212, 212, 212);">+=</span><span> j</span><span class="token" style="color: rgb(212, 212, 212);">-</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>mid</span><span class="token" style="color: rgb(212, 212, 212);">+</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> size </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> high</span><span class="token" style="color: rgb(212, 212, 212);">-</span><span>low</span><span class="token" style="color: rgb(212, 212, 212);">+</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">temp</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>size</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> left </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> low</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> right </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> mid</span><span class="token" style="color: rgb(212, 212, 212);">+</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> k</span><span class="token" style="color: rgb(212, 212, 212);">=</span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">while</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>left</span><span class="token" style="color: rgb(212, 212, 212);">&lt;=</span><span>mid </span><span class="token" style="color: rgb(212, 212, 212);">&amp;&amp;</span><span> right</span><span class="token" style="color: rgb(212, 212, 212);">&lt;=</span><span>high</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>nums</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>left</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>right</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>                temp</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>k</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>left</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">else</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>                temp</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>k</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>right</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">while</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>left</span><span class="token" style="color: rgb(212, 212, 212);">&lt;=</span><span>mid</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            temp</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>k</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>left</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> 
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">while</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>right</span><span class="token" style="color: rgb(212, 212, 212);">&lt;=</span><span>high</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            temp</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>k</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>right</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> 
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> m</span><span class="token" style="color: rgb(212, 212, 212);">=</span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> i</span><span class="token" style="color: rgb(212, 212, 212);">=</span><span>low</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> i</span><span class="token" style="color: rgb(212, 212, 212);">&lt;=</span><span>high</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> i</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            nums</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> temp</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>m</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span>
+</span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">void</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">mergeSort</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span class="token" style="color: rgb(212, 212, 212);">&amp;</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> low</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> high</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">&amp;</span><span> reversePairsCount</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>low </span><span class="token" style="color: rgb(212, 212, 212);">&gt;=</span><span> high</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> mid </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>low </span><span class="token" style="color: rgb(212, 212, 212);">+</span><span> high</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">&gt;&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(220, 220, 170);">mergeSort</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>nums</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> low</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> mid</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> reversePairsCount</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(220, 220, 170);">mergeSort</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>nums</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> mid</span><span class="token" style="color: rgb(212, 212, 212);">+</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> high</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> reversePairsCount</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(220, 220, 170);">merge</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>nums</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> low</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> mid</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> high</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> reversePairsCount</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">public</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">reversePairs</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span class="token" style="color: rgb(212, 212, 212);">&amp;</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> reversePairsCount </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(220, 220, 170);">mergeSort</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>nums</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">size</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">-</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> reversePairsCount</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> reversePairsCount</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
+</div>
