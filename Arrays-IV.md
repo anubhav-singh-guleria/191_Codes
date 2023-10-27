@@ -117,6 +117,9 @@ public:
 <li>Space: <code>O(N)</code></li>
 </ul></div></div></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Arrays IV 4Sum
 <div class="elfjS" data-track-load="description_content"><p>Given an array <code>nums</code> of <code>n</code> integers, return <em>an array of all the <strong>unique</strong> quadruplets</em> <code>[nums[a], nums[b], nums[c], nums[d]]</code> such that:</p>
 
@@ -321,6 +324,9 @@ public:
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
 </span></span><span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Arrays IV Longest Consecutive Sequence
 <div class="elfjS" data-track-load="description_content"><p>Given an unsorted array of integers <code>nums</code>, return <em>the length of the longest consecutive elements sequence.</em></p>
 
@@ -443,6 +449,10 @@ public:
 <em><strong>Space Complexity :</strong></em> <strong><code>O(N)</code></strong></p>
 <hr></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
+
 ## Arrays IV Largest subarray with 0 sum
 
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an array having both positive and negative integers. The task is to compute the&nbsp;length of the largest subarray with sum 0.</span></p>
@@ -514,6 +524,10 @@ int maxLen(int arr[], int n)
 }
 ```
 
+## Go To
+[Table of Content](#table-of-content)
+
+
 ## Arrays IV Count the number of subarrays with given xor K
 
 <div _ngcontent-serverapp-c178="" disableselect="" class="description pt-8 prevent-select ng-star-inserted"><h4 id="given-an-array-a-consisting-of-n-integers-and-an-integer-b-find-the-number-of-subarrays-of-array-a-whose-bitwise-xor-of-all-elements-is-equal-to-b">Given an array <em><strong>‘A’</strong></em> consisting of <em><strong>‘N’</strong></em> integers and an integer <em><strong>‘B’</strong></em>, find the number of subarrays of array ‘A’ whose bitwise XOR( ⊕ ) of all elements is equal to ‘B’.</h4>
@@ -571,6 +585,10 @@ int subarraysWithSumK(vector < int > a, int b) {
 }
 ```
 
+## Go To
+[Table of Content](#table-of-content)
+
+
 ## Arrays IV Longest Substring Without Repeating Characters
 <div class="elfjS" data-track-load="description_content"><p>Given a string <code>s</code>, find the length of the <strong>longest</strong> <span data-keyword="substring-nonempty" class=" cursor-pointer relative text-dark-blue-s text-sm"><div class="popover-wrapper inline-block" data-headlessui-state=""><div><div aria-expanded="false" data-headlessui-state="" id="headlessui-popover-button-:r25:"><div><strong>substring</strong></div></div><div style="position: fixed; z-index: 40; inset: 0px auto auto 0px; transform: translate(353px, 210px);"></div></div></div></span> without repeating characters.</p>
 
@@ -621,3 +639,6 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 </span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> </span><span class="token" style="color: rgb(206, 145, 120);">max</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div>
+
+## Go To
+[Table of Content](#table-of-content)
