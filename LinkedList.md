@@ -81,6 +81,9 @@
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Linked List - Middle of the Linked List
 <div class="elfjS" data-track-load="description_content"><p>Given the <code>head</code> of a singly linked list, return <em>the middle node of the linked list</em>.</p>
 
@@ -137,6 +140,9 @@ When <code>fast</code> arrives at the end, <code>slow</code> will arrive right i
 </span></span><span><span>            fast </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> fast</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(206, 145, 120);">next</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(206, 145, 120);">next</span><span>
 </span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> slow</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Linked List - Merge Two Sorted Lists
 <div class="elfjS" data-track-load="description_content"><p>You are given the heads of two sorted linked lists <code>list1</code> and <code>list2</code>.</p>
 
@@ -189,6 +195,10 @@ ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
 }
 ```
 
+## Go To
+[Table of Content](#table-of-content)
+
+
 ## Linked List - Remove Nth Node From End of List
 <div class="elfjS" data-track-load="description_content"><p>Given the <code>head</code> of a linked list, remove the <code>n<sup>th</sup></code> node from the end of the list and return its head.</p>
 
@@ -225,17 +235,17 @@ ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
 <p><strong>Follow up:</strong> Could you do this in one pass?</p>
 </div>
 
-## Solution
+### Solution
 
 <h4 id="idea"><em><strong>Idea:</strong></em></h4>
-<p>With a singly linked list, the <em>only</em> way to find the end of the list, and thus the <strong>n</strong>'th node from the end, is to actually iterate all the way to the end. The challenge here is attemping to find the solution in only one pass. A naive approach here might be to store pointers to each node in an array, allowing us to calculate the <strong>n</strong>'th from the end once we reach the end, but that would take <strong>O(M) extra space</strong>, where <strong>M</strong> is the length of the linked list.</p>
-<p>A slightly less naive approach would be to only store only the last <strong>n+1</strong> node pointers in the array. This could be achieved by overwriting the elements of the storage array in circlular fashion as we iterate through the list. This would lower the <strong>space complexity</strong> to <strong>O(N+1)</strong>.</p>
+<p>With a singly linked list, the <em>only</em> way to find the end of the list, and thus the <strong>n</strong>'th node from the end, is actually to iterate all the way to the end. The challenge here is attempting to find the solution in only one pass. A naive approach here might be to store pointers to each node in an array, allowing us to calculate the <strong>n</strong>'th from the end once we reach the end, but that would take <strong>O(M) extra space</strong>, where <strong>M</strong> is the length of the linked list.</p>
+<p>A slightly less naive approach would be to store only the last <strong>n+1</strong> node pointers in the array. This could be achieved by overwriting the elements of the storage array in a circular fashion as we iterate through the list. This would lower the <strong>space complexity</strong> to <strong>O(N+1)</strong>.</p>
 <p>In order to solve this problem in only one pass and <strong>O(1) extra space</strong>, however, we would need to find a way to <em>both</em> reach the end of the list with one pointer <em>and also</em> reach the <strong>n</strong>'th node from the end simultaneously with a second pointer.</p>
-<p>To do that, we can simply stagger our two pointers by <strong>n</strong> nodes by giving the first pointer (<strong>fast</strong>) a head start before starting the second pointer (<strong>slow</strong>). Doing this will cause <strong>slow</strong> to reach the <strong>n</strong>'th node from the end at the same time that <strong>fast</strong> reaches the end.</p>
+<p>To do that, we can stagger our two pointers by <strong>n</strong> nodes by giving the first pointer (<strong>fast</strong>) a head start before starting the second pointer (<strong>slow</strong>). Doing this will cause <strong>slow</strong> to reach the <strong>n</strong>'th node from the end at the same time that <strong>fast</strong> reaches the end.</p>
 <p><img src="https://i.imgur.com/BSiLKj0.png" alt="Visual 1"></p>
 <p>Since we will need access to the node <em>before</em> the target node in order to remove the target node, we can use <strong>fast.next == null</strong> as our exit condition, rather than <strong>fast == null</strong>, so that we stop one node earlier.</p>
 <p>This will unfortunately cause a problem when <strong>n</strong> is the same as the length of the list, which would make the first node the target node, and thus make it impossible to find the node <em>before</em> the target node. If that's the case, however, we can just <strong>return head.next</strong> without needing to stitch together the two sides of the target node.</p>
-<p>Otherwise, once we succesfully find the node <em>before</em> the target, we can then stitch it together with the node <em>after</em> the target, and then <strong>return head</strong>.</p>
+<p>Otherwise, once we successfully find the node <em>before</em> the target, we can then stitch it together with the node <em>after</em> the target, and then <strong>return head</strong>.</p>
 <hr>
 <h4 id="implementation"><em><strong>Implementation:</strong></em></h4>
 <p>There are only minor differences between the code of all four languages.</p>
@@ -291,6 +301,10 @@ ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
 </span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> head</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div>
+
+## Go To
+[Table of Content](#table-of-content)
+
 
   ## Linked List - Add Two Numbers
 <div class="elfjS" data-track-load="description_content"><p>You are given two <strong>non-empty</strong> linked lists representing two non-negative integers. The digits are stored in <strong>reverse order</strong>, and each of their nodes contains a single digit. Add the two numbers and return the sum&nbsp;as a linked list.</p>
@@ -386,6 +400,10 @@ public:
 };
 ```
 
+## Go To
+[Table of Content](#table-of-content)
+
+
 ## Linked List - Delete Node in a Linked List
 <div class="elfjS" data-track-load="description_content"><p>There is a singly-linked list <code>head</code> and we want to delete a node <code>node</code> in it.</p>
 
@@ -445,6 +463,9 @@ public:
         delete temp;
     }
 ```
+## Go To
+[Table of Content](#table-of-content)
+
 
 ## Linked List - Intersection of Two Linked Lists
 <div class="elfjS" data-track-load="description_content"><p>Given the heads of two singly linked-lists <code>headA</code> and <code>headB</code>, return <em>the node at which the two lists intersect</em>. If the two linked lists have no intersection at all, return <code>null</code>.</p>
@@ -573,6 +594,10 @@ Explanation: The two lists do not intersect, so return null.
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div></div></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
+
 ## Linked List - Linked List Cycle
 <div class="elfjS" data-track-load="description_content"><p>Given <code>head</code>, the head of a linked list, determine if the linked list has a cycle in it.</p>
 
@@ -654,6 +679,9 @@ public:
     }
 };
 ```
+## Go To
+[Table of Content](#table-of-content)
+
 
 ## Linked List - Reverse Nodes in k-Group
 <div class="elfjS" data-track-load="description_content"><p>Given the <code>head</code> of a linked list, reverse the nodes of the list <code>k</code> at a time, and return <em>the modified list</em>.</p>
@@ -721,6 +749,9 @@ public:
     }
 };
 ```
+## Go To
+[Table of Content](#table-of-content)
+
 
 ## Linked List - Palindrome Linked List
 <div class="elfjS" data-track-load="description_content"><p>Given the <code>head</code> of a singly linked list, return <code>true</code><em> if it is a </em><span data-keyword="palindrome-sequence" class=" cursor-pointer relative text-dark-blue-s text-sm"><div class="popover-wrapper inline-block" data-headlessui-state=""><div><div aria-expanded="false" data-headlessui-state="" id="headlessui-popover-button-:r1u:"><div><em>palindrome</em></div></div><div style="position: fixed; z-index: 40; inset: 0px auto auto 0px; transform: translate(422px, 178px);"></div></div></div></span><em> or </em><code>false</code><em> otherwise</em>.</p>
@@ -844,6 +875,10 @@ public:
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
+
 ## Linked List Linked List Cycle II
 <div class="elfjS" data-track-load="description_content"><p>Given the <code>head</code> of a linked list, return <em>the node where the cycle begins. If there is no cycle, return </em><code>null</code>.</p>
 
@@ -938,6 +973,10 @@ public:
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> </span><span class="token" style="color: rgb(156, 220, 254);">NULL</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>                                 </span><span class="token" style="color: rgb(106, 153, 85);">// there has no cycle</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div>
+
+## Go To
+[Table of Content](#table-of-content)
+
 
 ## Linked List - Flattening a Linked List
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size: 18px;">Given a Linked List of size N, where every node represents a sub-linked-list and contains two pointers:<br>(i) a<strong> next </strong>pointer to the next node,<br>(ii) a<strong>&nbsp;bottom</strong>&nbsp;pointer&nbsp;to a linked list where this node is head.<br>Each of the&nbsp;sub-linked-list is in sorted order.<br>Flatten the Link List such that all the nodes appear in a single level while maintaining the sorted order.&nbsp;</span><br><br><span style="font-size: 18px;"><strong>Note:</strong> The flattened list will be printed using the bottom pointer instead of the next pointer.<br>For more clarity have a look at the printList() function in the driver code.</span></p>
@@ -1049,3 +1088,8 @@ class GfG
    } 
 }
 ```
+
+## Go To
+[Table of Content](#table-of-content)
+
+
