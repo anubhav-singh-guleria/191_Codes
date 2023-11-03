@@ -1,3 +1,11 @@
+## Table of Content
+1. [Max Consecutive Ones](#linked-list--arrays---max-consecutive-ones)
+2. [Remove Duplicates from Sorted Array](#linked-list--arrays---remove-duplicates-from-sorted-array)
+3. [Trapping Rain Water](#linked-list--arrays---trapping-rain-water)
+4. [3Sum](#linked-list--arrays---3sum)
+5. [Copy List with Random Pointer](#linked-list--arrays---copy-list-with-random-pointer)
+6. [Rotate List](#linked-list--arrays---rotate-list)
+
 ## Linked List & Arrays - Rotate List
 <div class="elfjS" data-track-load="description_content"><p>Given the <code>head</code> of a linked&nbsp;list, rotate the list to the right by <code>k</code> places.</p>
 
