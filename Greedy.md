@@ -1,3 +1,11 @@
+## Table of Content
+1. [Maximum Number of Events that Can be Attended](#greedy---maximum-number-of-events-that-can-be-attended)
+2. [Minimum Platforms](#greedy---minimum-platforms)
+3. [Job Sequencing Problem](#greedy---job-sequencing-problem)
+4. [Fractional Knapsack](#greedy---fractional-knapsack)
+5. [Coin Change](#greedy---coin-change)
+
+
 ## Greedy - Maximum Number of Events That Can Be Attended
 <div class="elfjS" data-track-load="description_content"><p>You are given an array of <code>events</code> where <code>events[i] = [startDay<sub>i</sub>, endDay<sub>i</sub>]</code>. Every event <code>i</code> starts at <code>startDay<sub>i</sub></code><sub> </sub>and ends at <code>endDay<sub>i</sub></code>.</p>
 
