@@ -89,6 +89,9 @@ class Solution {
 }
 ```
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Greedy - Minimum Platforms
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given arrival and departure times of all trains that reach a railway station. Find the minimum number of platforms required for the railway station so that no train is kept waiting.<br>
 Consider that all the trains arrive on the same day and leave on the same day. Arrival and departure time can never&nbsp;be the same for a train&nbsp;but we can have arrival time of one train equal to departure time of the other.&nbsp;At any&nbsp;given instance of time, same platform can not be used for both departure of a train and arrival of another train.&nbsp;In such cases,&nbsp;we need different platforms<strong>.</strong></span></p>
@@ -178,6 +181,10 @@ class Solution{
     }
 };
 ```
+
+## Go To
+[Table of Content](#table-of-content)
+
 
 ## Greedy - Job Sequencing Problem
 <div class="track_body__GeGQu"><strong>Problem</strong>: Given an array of jobs where every job has a deadline and associated profit if the job is finished before the deadline. It is also given that every job takes a single unit of time, so the minimum possible deadline for any job is 1. How to maximize total profit if only one job can be scheduled at a time.<br><br><strong>Examples:</strong><br><pre><strong>Input</strong>: Four Jobs with following deadlines and profits
@@ -290,6 +297,10 @@ Output:</b><br><pre>Following is maximum profit sequence of job : c a e
 
 </pre><br></div><br><br><strong>Time Complexity</strong> of the above solution is O(n<sup>2</sup>).</div>
 
+## Go To
+[Table of Content](#table-of-content)
+
+
 ## Greedy - Fractional Knapsack
 
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given <em>weights</em> and <em>values</em> of <strong>N</strong> items, we need to put these items in a knapsack of capacity <strong>W</strong> to get the <em>maximum</em> total value in the knapsack.<br>
@@ -400,6 +411,8 @@ class Solution
 <h3>Complexity</h3>
 <p><strong>Time Complexity: O(N.log(N))</strong>, as we sorted the vectors of size N.<br><strong>Auxiliary Space: O(1)</strong>, as we are not using any extra space.</p>
 
+## Go To
+[Table of Content](#table-of-content)
 
 ## Greedy - Coin Change
 <div class="elfjS" data-track-load="description_content"><p>You are given an integer array <code>coins</code> representing coins of different denominations and an integer <code>amount</code> representing a total amount of money.</p>
@@ -563,4 +576,5 @@ public:
   }
 };
 ```
-
+## Go To
+[Table of Content](#table-of-content)
