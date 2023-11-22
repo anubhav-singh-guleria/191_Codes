@@ -1,3 +1,5 @@
+## Table of Content
+
 ## Backtracking - Permutations
 <div class="elfjS" data-track-load="description_content"><p>Given an array <code>nums</code> of distinct integers, return <em>all the possible permutations</em>. You can return the answer in <strong>any order</strong>.</p>
 
@@ -52,6 +54,9 @@ public:
     }
 };
 ```
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## Backtracking - N-Queens
 
@@ -128,6 +133,9 @@ public:
     }
 };
 ```
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## Backtracking - Sudoku Solver
 <div class="elfjS" data-track-load="description_content"><p>Write a program to solve a Sudoku puzzle by filling the empty cells.</p>
@@ -206,6 +214,9 @@ board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == c) return false; //check 
     }
 }
 ```
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## Backtracking - M – Coloring Problem
 <p><strong>Problem Statement:</strong> Given an undirected graph and a number m, determine if the graph can be colored with at most m colors such that no two adjacent vertices of the graph are colored with the same color.</p>
@@ -311,6 +322,9 @@ int main() {
 
 }
 ```
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## Backtrcking - Rat in a Maze
 <p>Consider a rat placed at <strong>(0, 0)</strong> in a square matrix<strong> </strong>of order <strong>N * N</strong>. It has to reach the destination at <strong>(N – 1, N – 1)</strong>. Find all possible paths that the rat can take to reach from source to destination. The directions in which the rat can move are <strong>‘U'(up)</strong>, <strong>‘D'(down)</strong>, <strong>‘L’ (left)</strong>, <strong>‘R’ (right)</strong>. Value 0 at a cell in the matrix represents that it is blocked and the rat cannot move to it while value 1 at a cell in the matrix represents that rat can travel through it.</p>
@@ -431,3 +445,5 @@ int main() {
 <p><strong>Space Complexity:&nbsp; O(m*n), </strong>Maximum Depth of the recursion tree(auxiliary space).</p>
 
 
+## Go To
+[Table of Content](#table-of-content)
