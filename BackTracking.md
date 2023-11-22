@@ -1,5 +1,11 @@
 ## Table of Content
+1. [Permutations](#backtracking---permutations)
+2. [N-Queens](#backtracking---n-queens)
+3. [Sudoku Solver](#backtracking---sudoku-solver)
+4. [M-Coloring Problem](#backtracking---m--coloring-problem)
+5. [Rat in a Maze](#backtrcking---rat-in-a-maze)
 
+   
 ## Backtracking - Permutations
 <div class="elfjS" data-track-load="description_content"><p>Given an array <code>nums</code> of distinct integers, return <em>all the possible permutations</em>. You can return the answer in <strong>any order</strong>.</p>
 
