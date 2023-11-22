@@ -207,4 +207,227 @@ board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == c) return false; //check 
 }
 ```
 
-## Backtracking - 
+## Backtracking - M – Coloring Problem
+<p><strong>Problem Statement:</strong> Given an undirected graph and a number m, determine if the graph can be colored with at most m colors such that no two adjacent vertices of the graph are colored with the same color.</p>
+<p><strong>Examples:</strong></p>
+<pre class="wp-block-preformatted"><strong>Example 1:</strong>
+<strong>Input: </strong>
+N = 4
+M = 3
+E = 5
+Edges[] = {
+  (0, 1),
+  (1, 2),
+  (2, 3),
+  (3, 0),
+  (0, 2)
+}
+
+<strong>Output:</strong> 1
+
+<strong>Explanation:</strong> It is possible to colour the given graph using 3 colours.
+
+<strong>Example 2:</strong>
+
+<strong>Input:</strong> 
+N = 3
+M = 2
+E = 3
+Edges[] = {
+  (0, 1),
+  (1, 2),
+  (0, 2)
+}
+
+<strong>Output:</strong> 0
+
+
+<strong>Explanation:</strong> It is not possible to color.</pre>
+<h3><strong>Solution</strong></h3>
+<p><strong>Approach</strong>: </p>
+<p>Basically starting from vertex 0 color one by one the different vertices.&nbsp;</p>
+<p><strong>Base condition:</strong></p>
+<p>If I have colored all the N nodes return true.</p>
+<p><strong>Recursion:</strong></p>
+<p>Trying every color from 1 to m with the help of a for a loop.</p>
+<p>Is safe function returns true if it is possible to color it with that color i.e none of the adjacent nodes have the same color.<br><br>In case this is an algorithm and follows a certain intuition, please mention it.&nbsp;</p>
+<p>Color it with color i then call the recursive function for the next node if it returns true we will return true.</p>
+<p>And If it is false then take off the color.</p>
+<p><strong>Code:</strong></p>
+
+```
+#include<bits/stdc++.h>
+
+using namespace std;
+bool isSafe(int node, int color[], bool graph[101][101], int n, int col) {
+  for (int k = 0; k < n; k++) {
+    if (k != node && graph[k][node] == 1 && color[k] == col) {
+      return false;
+    }
+  }
+  return true;
+}
+bool solve(int node, int color[], int m, int N, bool graph[101][101]) {
+  if (node == N) {
+    return true;
+  }
+
+  for (int i = 1; i <= m; i++) {
+    if (isSafe(node, color, graph, N, i)) {
+      color[node] = i;
+      if (solve(node + 1, color, m, N, graph)) return true;
+      color[node] = 0;
+    }
+
+  }
+  return false;
+}
+
+//Function to determine if graph can be coloured with at most M colours such
+//that no two adjacent vertices of graph are coloured with same colour.
+bool graphColoring(bool graph[101][101], int m, int N) {
+  int color[N] = {
+    0
+  };
+  if (solve(0, color, m, N, graph)) return true;
+  return false;
+}
+
+int main() {
+  int N = 4;
+  int m = 3;
+
+  bool graph[101][101];
+  memset(graph, false, sizeof graph);
+
+  // Edges are (0, 1), (1, 2), (2, 3), (3, 0), (0, 2)
+  graph[0][1] = 1; graph[1][0] = 1;
+  graph[1][2] = 1; graph[2][1] = 1;
+  graph[2][3] = 1; graph[3][2] = 1;
+  graph[3][0] = 1; graph[0][3] = 1;
+  graph[0][2] = 1; graph[2][0] = 1;
+  
+  cout << graphColoring(graph, m, N);
+
+}
+```
+
+## Backtrcking - Rat in a Maze
+<p>Consider a rat placed at <strong>(0, 0)</strong> in a square matrix<strong> </strong>of order <strong>N * N</strong>. It has to reach the destination at <strong>(N – 1, N – 1)</strong>. Find all possible paths that the rat can take to reach from source to destination. The directions in which the rat can move are <strong>‘U'(up)</strong>, <strong>‘D'(down)</strong>, <strong>‘L’ (left)</strong>, <strong>‘R’ (right)</strong>. Value 0 at a cell in the matrix represents that it is blocked and the rat cannot move to it while value 1 at a cell in the matrix represents that rat can travel through it.</p>
+<p><strong>Note</strong>: In a path, no cell can be visited more than one time.</p>
+<p>Print the answer in lexicographical(sorted) order</p>
+<p><strong>Examples:</strong></p>
+<pre class="wp-block-preformatted"><strong>Example 1:</strong>
+
+<strong>Input:</strong>
+N = 4
+m[][] = {{1, 0, 0, 0},
+        {1, 1, 0, 1}, 
+        {1, 1, 0, 0},
+        {0, 1, 1, 1}}
+
+<strong>Output:</strong> DDRDRR DRDDRR
+
+<strong>Explanation:</strong>
+
+<img class="lazy-loaded" loading="lazy" width="227" height="227" src="https://lh4.googleusercontent.com/S8inL4fJsNLyNYtmgFbXAx5BEcA0rgKk3-PYWkVYc90hIBhSgMYWBWtNqz82H0zCZvXqYxp1g3kDpTwjKhTYB2NjwgoHgoPU9Bve6aFzbl-mvI4I90NmEvbV0TpiQ3LXeHccBVEC" data-lazy-type="image" data-src="https://lh4.googleusercontent.com/S8inL4fJsNLyNYtmgFbXAx5BEcA0rgKk3-PYWkVYc90hIBhSgMYWBWtNqz82H0zCZvXqYxp1g3kDpTwjKhTYB2NjwgoHgoPU9Bve6aFzbl-mvI4I90NmEvbV0TpiQ3LXeHccBVEC"><noscript><img loading="lazy" width="227" height="227" src="https://lh4.googleusercontent.com/S8inL4fJsNLyNYtmgFbXAx5BEcA0rgKk3-PYWkVYc90hIBhSgMYWBWtNqz82H0zCZvXqYxp1g3kDpTwjKhTYB2NjwgoHgoPU9Bve6aFzbl-mvI4I90NmEvbV0TpiQ3LXeHccBVEC"></noscript>
+
+The rat can reach the destination at (3, 3) from (0, 0) by two paths - DRDDRR and DDRDRR, when printed in sorted order we get DDRDRR DRDDRR.
+
+<strong>Example 2:</strong>
+
+<strong>Input:</strong> N = 2
+       m[][] = {{1, 0},
+                {1, 0}}
+
+<strong>Output:</strong>
+ No path exists and the destination cell is blocked.
+</pre>
+<h3><strong>Solution</strong></h3>
+<p><strong>Intuition:</strong></p>
+<p>The best way to solve such problems is using recursion.</p>
+<p><strong>Approach</strong>:</p>
+<ul><li>Start at the source(0,0) with an empty string and try every possible path i.e upwards<strong>(U)</strong>, downwards<strong>(D)</strong>, leftwards<strong>(L)</strong> and rightwards<strong>(R)</strong>.</li><li>As the <strong>answer </strong>should be in lexicographical order so it’s better to try the <strong>directions </strong>in lexicographical order i.e (D,L,R,U)</li><li>Declare a 2D-array named visited because the question states that a single cell should be included only once in the path,so it’s important to keep track of the visited cells in a particular path.</li><li>If a cell is in path, mark it in the visited array.</li><li>Also keep a check of the<strong> “out of bound” </strong>conditions while going in a particular direction in the matrix.&nbsp;</li><li>Whenever you reach the destination<strong>(n,n)</strong> it’s very important to get back as shown in the recursion tree.</li><li>While getting back, keep on unmarking the visited array for the respective direction.Also check whether there is a different path possible while getting back and if yes, then mark that cell in the visited array.</li></ul>
+<p><strong>Recursive tree:</strong></p>
+<p><img class="lazy-loaded" loading="lazy" width="624" height="420" src="https://lh5.googleusercontent.com/G8Ix6_osmHr9thVF0o1o5QL-V6-G2wQPM3J1IwCTFcc3rzoGNbwNo9ZuIjLl5BNrx-bj50VxcU1A3qC6EPiKUxxOD2OtsBAGz0jQksI03jn8r9vkGX2QZs31ghpwUZIHLxTMsgRt" data-lazy-type="image" data-src="https://lh5.googleusercontent.com/G8Ix6_osmHr9thVF0o1o5QL-V6-G2wQPM3J1IwCTFcc3rzoGNbwNo9ZuIjLl5BNrx-bj50VxcU1A3qC6EPiKUxxOD2OtsBAGz0jQksI03jn8r9vkGX2QZs31ghpwUZIHLxTMsgRt"><noscript><img loading="lazy" width="624" height="420" src="https://lh5.googleusercontent.com/G8Ix6_osmHr9thVF0o1o5QL-V6-G2wQPM3J1IwCTFcc3rzoGNbwNo9ZuIjLl5BNrx-bj50VxcU1A3qC6EPiKUxxOD2OtsBAGz0jQksI03jn8r9vkGX2QZs31ghpwUZIHLxTMsgRt"></noscript></p>
+<p><strong>For&nbsp; “DDRDRR” :</strong></p>
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:50%">
+<p><strong><img class="lazy-loaded" loading="lazy" width="288" height="303" src="https://lh4.googleusercontent.com/jHuDgGszsySZjD2RTMQE4DCT_9OC46Red7ulQwP-8ctIP-C8zxYn2NMljOS4E_y6P1ByfQ3F5vabBsAPJIiuhy-4j5GvHgs0wjkdJQSb9KT1zooSxHb9XqwAGjwyDspd30ZBscHF" data-lazy-type="image" data-src="https://lh4.googleusercontent.com/jHuDgGszsySZjD2RTMQE4DCT_9OC46Red7ulQwP-8ctIP-C8zxYn2NMljOS4E_y6P1ByfQ3F5vabBsAPJIiuhy-4j5GvHgs0wjkdJQSb9KT1zooSxHb9XqwAGjwyDspd30ZBscHF"><noscript><img loading="lazy" width="288" height="303" src="https://lh4.googleusercontent.com/jHuDgGszsySZjD2RTMQE4DCT_9OC46Red7ulQwP-8ctIP-C8zxYn2NMljOS4E_y6P1ByfQ3F5vabBsAPJIiuhy-4j5GvHgs0wjkdJQSb9KT1zooSxHb9XqwAGjwyDspd30ZBscHF"></noscript></strong> </p>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:50%">
+<p><strong><img class="lazy-loaded" loading="lazy" src="https://lh5.googleusercontent.com/HRDMA8b1Htmoz-vNJKntjUXhBnmjptURMWkykzEe4jEP2eYVtP6As4Zf_uBX-vVf9r1wK-hBJ2wuGhKKvikRUr5URVTYArEjhE-TQEAd98505_L0M-EqylJxVawURD1Z4lagpyfc" data-lazy-type="image" data-src="https://lh5.googleusercontent.com/HRDMA8b1Htmoz-vNJKntjUXhBnmjptURMWkykzEe4jEP2eYVtP6As4Zf_uBX-vVf9r1wK-hBJ2wuGhKKvikRUr5URVTYArEjhE-TQEAd98505_L0M-EqylJxVawURD1Z4lagpyfc" width="271" height="296"><noscript><img loading="lazy" src="https://lh5.googleusercontent.com/HRDMA8b1Htmoz-vNJKntjUXhBnmjptURMWkykzEe4jEP2eYVtP6As4Zf_uBX-vVf9r1wK-hBJ2wuGhKKvikRUr5URVTYArEjhE-TQEAd98505_L0M-EqylJxVawURD1Z4lagpyfc" width="271" height="296"></noscript></strong></p>
+</div>
+</div>
+<p><strong>Code:</strong></p>
+
+```
+#include <bits/stdc++.h>
+
+using namespace std;
+
+class Solution {
+  void solve(int i, int j, vector < vector < int >> & a, int n, vector < string > & ans, string move,
+    vector < vector < int >> & vis, int di[], int dj[]) {
+    if (i == n - 1 && j == n - 1) {
+      ans.push_back(move);
+      return;
+    }
+    string dir = "DLRU";
+    for (int ind = 0; ind < 4; ind++) {
+      int nexti = i + di[ind];
+      int nextj = j + dj[ind];
+      if (nexti >= 0 && nextj >= 0 && nexti < n && nextj < n && !vis[nexti][nextj] && a[nexti][nextj] == 1) {
+        vis[i][j] = 1;
+        solve(nexti, nextj, a, n, ans, move + dir[ind], vis, di, dj);
+        vis[i][j] = 0;
+      }
+    }
+
+  }
+  public:
+    vector < string > findPath(vector < vector < int >> & m, int n) {
+      vector < string > ans;
+      vector < vector < int >> vis(n, vector < int > (n, 0));
+      int di[] = {
+        +1,
+        0,
+        0,
+        -1
+      };
+      int dj[] = {
+        0,
+        -1,
+        1,
+        0
+      };
+      if (m[0][0] == 1) solve(0, 0, m, n, ans, "", vis, di, dj);
+      return ans;
+    }
+};
+
+int main() {
+  int n = 4;
+
+ vector < vector < int >> m = {{1,0,0,0},{1,1,0,1},{1,1,0,0},{0,1,1,1}};
+   
+  Solution obj;
+  vector < string > result = obj.findPath(m, n);
+  if (result.size() == 0)
+    cout << -1;
+  else
+    for (int i = 0; i < result.size(); i++) cout << result[i] << " ";
+  cout << endl;
+
+  return 0;
+}
+```
+<p><strong>Output:</strong></p>
+<p>DDRDRR DRDDRR</p>
+<p><strong>Time Complexity: O(4^(m*n)), </strong>because<strong> </strong>on every cell we need to try 4 different directions.</p>
+<p><strong>Space Complexity:&nbsp; O(m*n), </strong>Maximum Depth of the recursion tree(auxiliary space).</p>
+
+
