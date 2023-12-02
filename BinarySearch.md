@@ -79,6 +79,9 @@ Complexity Analysis
 <p></p>
 </details>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Binary Search - Median of Row Wise Sorted Matrix
 <div class="entry-content clearfix">
 <p><strong>Problem Statement:</strong> Given a row-wise sorted matrix of size r*c, where r is no. of rows and c is no. of columns, find the median in the given matrix.</p>
@@ -152,6 +155,10 @@ int main()
 
 
 </div>
+
+## Go To
+[Table of Content](#table-of-content)
+
 
 ## Binary Search - Single Element in a Sorted Array
 <div class="elfjS" data-track-load="description_content"><p>You are given a sorted array consisting of only integers where every element appears exactly twice, except for one element which appears exactly once.</p>
@@ -256,6 +263,8 @@ public:
     }
 };
 ```
+## Go To
+[Table of Content](#table-of-content)
 
 ## Binary Search - Search in Rotated Sorted Array
 <div class="elfjS" data-track-load="description_content"><p>There is an integer array <code>nums</code> sorted in ascending order (with <strong>distinct</strong> values).</p>
@@ -378,6 +387,9 @@ That's when your <code>target</code> and <code>nums[mid]</code> are on the same 
 </span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div>
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## Binary Search - Median of Two Sorted Arrays
 <div class="elfjS" data-track-load="description_content"><p>Given two sorted arrays <code>nums1</code> and <code>nums2</code> of size <code>m</code> and <code>n</code> respectively, return <strong>the median</strong> of the two sorted arrays.</p>
@@ -514,6 +526,10 @@ L1 &lt;= R1 and L2 &lt;= R2 are naturally guaranteed because A1 and A2 are sorte
 </span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span> </span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
+
 ## Binary Search - K-th element of two Arrays
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size: 18px;">Given two arrays <strong>arr1</strong> and <strong>arr2</strong> of size <strong>N</strong>&nbsp;and <strong>M</strong>&nbsp;respectively and an element <strong>K</strong>. The task is to find the element that would be at the kth position of the final sorted array.</span><br>&nbsp;</p>
 <p><span style="font-size: 18px;"><strong>Example 1:</strong></span></p>
@@ -609,6 +625,9 @@ int main()
 <div class="code-output ck-widget"><br><strong>Output</strong><pre>256
 </pre></div>
 <p><strong>Time Complexity :</strong> O( Log( maxN ).log( N+M ) )<br><strong>Auxiliary Space :</strong> O( 1 )</p>
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## Binary Search - Allocate minimum number of pages
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size: 18px;">You have <strong>N</strong> books, each with <strong>A[i]</strong> number of pages. <strong>M</strong> students need to be allocated contiguous books, with each student getting at least one book. <br>Out of all the permutations, the goal is to find the permutation where the student with the most <strong>books </strong>allocated to him gets the minimum number of pages, out of all possible permutations.</span></p>
@@ -733,6 +752,9 @@ class Solution
 ```
 <p dir="ltr"><b><strong>Time Complexity: O(n*log (M - max))</strong></b><span>, as isPossible function took O(n) time complexity, and we are applying binary search on search space having (M-max) size. where M is sum(arr[]) and max is max(arr[]).</span><br><b><strong>Auxiliary Space: O(1)</strong></b><span> as we are not using any extra space.</span></p>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Binary Search - Aggressive Cows
 
 <h4>Question</h4>
@@ -820,3 +842,6 @@ low = 4 and high = 3 OOPS low crosses high so STOP<br>
     <span class="hljs-keyword">return</span> res;
 }
 </code></pre><p></p></div>
+
+## Go To
+[Table of Content](#table-of-content)
