@@ -1,3 +1,13 @@
+## Table of Content
+1. [Nth Root of a Number using Binary Search](#binary-search---nth-root-of-a-number-using-binary-search)
+2. [Median of Row-Wise Sorted Matrix](#binary-search---median-of-row-wise-sorted-matrix)
+3. [Single Element in a Sorted Array](#binary-search---single-element-in-a-sorted-array)
+4. [Search in Rotated Sorted Array](#binary-search---search-in-rotated-sorted-array)
+5. [Median of Two Sorted Arrays](#binary-search---median-of-two-sorted-arrays)
+6. [K-th Element of Two Arrays](#binary-search---k-th-element-of-two-arrays)
+7. [Allocate Minimum Number of Pages](#binary-search---allocate-minimum-number-of-pages)
+8. [Aggressive Cows](#binary-search---aggressive-cows)
+
 ## Binary Search - Nth Root of a Number using Binary Search
 <p><strong>Problem Statement:</strong> Given two numbers N and M, find the Nth root of M. The nth root of a number M is defined as a number X when raised to the power N equals M. If the ‘nth root is not an integer, return -1.</p>
 
