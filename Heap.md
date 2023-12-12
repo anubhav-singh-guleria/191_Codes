@@ -1,5 +1,12 @@
 ## Table Of Content
+1. [Implementation of Min Heap and Max Heap](#heap---implementation-of-min-heap-and-max-heap)
+2. [Kth Largest Element in an Array](#heap---kth-largest-element-in-an-array)
+3. [Maximum Sum Combinations](#heap---maximum-sum-combinations)
+4. [Find Median from Data Stream](#heap---find-median-from-data-stream)
+5. [Merge K Sorted Lists](#heap---merge-k-sorted-lists)
+6. [Top K Frequent Elements](#heap---top-k-frequent-elements)
 
+   
 ## Heap - Implementation Of Min Heap and Max Heap
 ### Implementation
 </header>
