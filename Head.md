@@ -281,4 +281,641 @@ We can also use a max heap to keep track of the k largest elements seen so far. 
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H39a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H39a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
 
-## Heap - 
+## Heap - Maximum Sum Combinations
+<div class="p-html-content__container"><p><strong>Problem Description</strong><br> 
+ </p><div id="problem_description_markdown_content_value" style="background-color: #f9f9f9; padding: 5px 10px; "><p>Given two equally sized 1-D arrays <strong>A, B</strong> containing <strong>N</strong> integers each.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+<p>A <strong>sum combination</strong> is made by adding one element from array <strong>A</strong> and another element of array <strong>B</strong>.</p>
+<p>Return the <strong>maximum C valid sum combinations</strong> from all the possible sum combinations.</p>
+
+<p></p></div><br><br><strong>Problem Constraints</strong><br> 
+ <div id="problem_constraints_markdown_content_value" style="background-color: #f9f9f9; padding: 5px 10px; "><p>1 &lt;= N &lt;= 10<sup>5</sup></p> 
+<p>1 &lt;= A[i] &lt;= 10<sup>5</sup></p>
+<p>1 &lt;= C &lt;= N</p> </div><br><br><strong>Input Format</strong><br> 
+ <div id="input_format_markdown_content_value" style="background-color: #f9f9f9; padding: 5px 10px; "><p>First argument is an one-dimensional integer array <strong>A</strong> of size <strong>N</strong>.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+<p>Second argument is an one-dimensional integer array <strong>B</strong> of size <strong>N</strong>.</p>
+<p>Third argument is an integer <strong>C</strong>.</p>
+
+<p></p></div><br><br><strong>Output Format</strong><br> 
+ <div id="output_format_markdown_content_value" style="background-color: #f9f9f9; padding: 5px 10px; "><p>Return a one-dimensional integer array of size <strong>C</strong> denoting the top C maximum sum combinations.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+<p><strong>NOTE:</strong></p>
+<p>The returned array must be sorted in non-increasing order.</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p></div><br><br><strong>Example Input</strong><br> 
+ <div id="example_input_markdown_content_value" style="background-color: #f9f9f9; padding: 5px 10px; "><p>Input 1:</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+<pre> A = [3, 2]
+ B = [1, 4]
+ C = 2
+</pre>
+<p>Input 2:</p>
+<pre> A = [1, 4, 2, 3]
+ B = [2, 5, 1, 6]
+ C = 4
+</pre>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p></div><br><br><strong>Example Output</strong><br> 
+ <div id="example_output_markdown_content_value" style="background-color: #f9f9f9; padding: 5px 10px; "><p>Output 1:</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+<pre> [7, 6]
+</pre>
+<p>Output 1:</p>
+<pre> [10, 9, 9, 8]
+</pre>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p></div><br><br><strong>Example Explanation</strong><br> 
+ <div id="example_explanation_markdown_content_value" style="background-color: #f9f9f9; padding: 5px 10px; "><p>Explanation 1:</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+<pre> 7     (A : 3) + (B : 4)
+ 6     (A : 2) + (B : 4)
+</pre>
+<p>Explanation 2:</p>
+<pre> 10   (A : 4) + (B : 6)
+ 9   (A : 4) + (B : 5)
+ 9   (A : 3) + (B : 6)
+ 8   (A : 3) + (B : 5)
+</pre>
+<p></p></div><br><br><p></p>
+</div>
+
+### Solution
+<ol>
+<li value="1"><span>Sort both arrays array A and array B.</span></li>
+<li value="2"><span>Create a max heap i.e </span><a href="https://www.geeksforgeeks.org/priority-queue-in-cpp-stl/" class="GFGEditorTheme__link"><span>priority_queue in C++</span></a><span> to store the sum combinations along with the indices of elements from both arrays A and B which make up the sum. Heap is ordered by the sum.</span></li>
+<li value="3"><span>Initialize the heap with the maximum possible sum combination i.e (A[N – 1] + B[N – 1] where N is the size of array) and with the indices of elements from both arrays (N – 1, N – 1). The tuple inside max heap will be (A[N-1] + B[N – 1], N – 1, N – 1). Heap is ordered by first value i.e sum of both elements.</span></li>
+<li value="4"><span>Pop the heap to get the current largest sum and along with the indices of the element that make up the sum. Let the tuple be (sum, i, j).</span>
+<ol>
+<li value="1"><span>Next insert (A[i – 1] + B[j], i – 1, j) and (A[i] + B[j – 1], i, j – 1) into the max heap but make sure that the pair of indices i.e (i – 1, j) and (i, j – 1) are not&nbsp;</span><br><span>already present in the max heap. To check this we can use </span><a href="https://www.geeksforgeeks.org/set-in-cpp-stl/" class="GFGEditorTheme__link"><span>set in C++</span></a><span>.</span></li>
+<li value="2"><span>Go back to 4 until K times.</span></li>
+</ol>
+</li>
+</ol>
+
+```
+// An efficient C++ program to find top K elements
+// from two arrays.
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function prints k maximum possible combinations
+void KMaxCombinations(vector<int>& A, 
+					vector<int>& B, int K)
+{
+	// sort both arrays A and B
+	sort(A.begin(), A.end());
+	sort(B.begin(), B.end());
+
+	int N = A.size();
+
+	// Max heap which contains tuple of the format
+	// (sum, (i, j)) i and j are the indices
+	// of the elements from array A
+	// and array B which make up the sum.
+	priority_queue<pair<int, pair<int, int> > > pq;
+
+	// my_set is used to store the indices of
+	// the pair(i, j) we use my_set to make sure
+	// the indices does not repeat inside max heap.
+	set<pair<int, int> > my_set;
+
+	// initialize the heap with the maximum sum
+	// combination ie (A[N - 1] + B[N - 1])
+	// and also push indices (N - 1, N - 1) along
+	// with sum.
+	pq.push(make_pair(A[N - 1] + B[N - 1],
+					make_pair(N - 1, N - 1)));
+
+	my_set.insert(make_pair(N - 1, N - 1));
+
+	// iterate upto K
+	for (int count = 0; count < K; count++)
+	{
+		// tuple format (sum, (i, j)).
+		pair<int, pair<int, int> > temp = pq.top();
+		pq.pop();
+
+		cout << temp.first << endl;
+
+		int i = temp.second.first;
+		int j = temp.second.second;
+
+		int sum = A[i - 1] + B[j];
+
+		// insert (A[i - 1] + B[j], (i - 1, j))
+		// into max heap.
+		pair<int, int> temp1 = make_pair(i - 1, j);
+
+		// insert only if the pair (i - 1, j) is
+		// not already present inside the map i.e.
+		// no repeating pair should be present inside
+		// the heap.
+		if (my_set.find(temp1) == my_set.end()) 
+		{
+			pq.push(make_pair(sum, temp1));
+			my_set.insert(temp1);
+		}
+
+		// insert (A[i] + B[j - 1], (i, j - 1))
+		// into max heap.
+		sum = A[i] + B[j - 1];
+		temp1 = make_pair(i, j - 1);
+
+		// insert only if the pair (i, j - 1)
+		// is not present inside the heap.
+		if (my_set.find(temp1) == my_set.end())
+		{
+			pq.push(make_pair(sum, temp1));
+			my_set.insert(temp1);
+		}
+	}
+}
+
+// Driver Code.
+int main()
+{
+	vector<int> A = { 1, 4, 2, 3 };
+	vector<int> B = { 2, 5, 1, 6 };
+	int K = 4;
+
+	// Function call
+	KMaxCombinations(A, B, K);
+	return 0;
+}
+```
+<div class="code-output"><strong>Output</strong><p></p>
+<pre>10
+9
+9
+8
+
+</pre>
+</div>
+
+## Heap - Find Median from Data Stream
+<div class="elfjS" data-track-load="description_content"><p>The <strong>median</strong> is the middle value in an ordered integer list. If the size of the list is even, there is no middle value, and the median is the mean of the two middle values.</p>
+
+<ul>
+	<li>For example, for <code>arr = [2,3,4]</code>, the median is <code>3</code>.</li>
+	<li>For example, for <code>arr = [2,3]</code>, the median is <code>(2 + 3) / 2 = 2.5</code>.</li>
+</ul>
+
+<p>Implement the MedianFinder class:</p>
+
+<ul>
+	<li><code>MedianFinder()</code> initializes the <code>MedianFinder</code> object.</li>
+	<li><code>void addNum(int num)</code> adds the integer <code>num</code> from the data stream to the data structure.</li>
+	<li><code>double findMedian()</code> returns the median of all elements so far. Answers within <code>10<sup>-5</sup></code> of the actual answer will be accepted.</li>
+</ul>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input</strong>
+["MedianFinder", "addNum", "addNum", "findMedian", "addNum", "findMedian"]
+[[], [1], [2], [], [3], []]
+<strong>Output</strong>
+[null, null, null, 1.5, null, 2.0]
+
+<strong>Explanation</strong>
+MedianFinder medianFinder = new MedianFinder();
+medianFinder.addNum(1);    // arr = [1]
+medianFinder.addNum(2);    // arr = [1, 2]
+medianFinder.findMedian(); // return 1.5 (i.e., (1 + 2) / 2)
+medianFinder.addNum(3);    // arr[1, 2, 3]
+medianFinder.findMedian(); // return 2.0
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>-10<sup>5</sup> &lt;= num &lt;= 10<sup>5</sup></code></li>
+	<li>There will be at least one element in the data structure before calling <code>findMedian</code>.</li>
+	<li>At most <code>5 * 10<sup>4</sup></code> calls will be made to <code>addNum</code> and <code>findMedian</code>.</li>
+</ul>
+
+<p>&nbsp;</p>
+<p><strong>Follow up:</strong></p>
+
+<ul>
+	<li>If all integer numbers from the stream are in the range <code>[0, 100]</code>, how would you optimize your solution?</li>
+	<li>If <code>99%</code> of all integer numbers from the stream are in the range <code>[0, 100]</code>, how would you optimize your solution?</li>
+</ul>
+</div>
+
+### Solution
+<div class="FN9Jv WRmCx"><p><strong>✔️ Solution 1: MaxHeap to store a half of low numbers, MinHeap to store a half of high numbers</strong></p>
+<ul>
+<li>The idea is to divide numbers into 2 balanced halves, one half <code>low</code> stores low numbers, the other half <code>high</code> stores high numbers. To access the median in <code>O(1)</code>, we need a data structure that give us the maximum of <code>low</code> half and the minimum of <code>high</code> half in <code>O(1)</code>. That's where <code>maxHeap</code> and <code>minHeap</code> come into play.</li>
+<li>We use <code>maxHeap</code> to store a half of <strong>low numbers</strong>, top of the maxHeap is the highest number among low numbers.</li>
+<li>We use <code>minHeap</code> to store a half of <strong>high numbers</strong>, top of the minHeap is the lowest number among high numbers.</li>
+<li>We need to balance the size between <code>maxHeap</code> and <code>minHeap</code> while processing. Hence after adding <code>k</code> elements,
+<ul>
+<li>If <code>k = 2 * i</code> then <code>maxHeap.size = minHeap.size = i</code></li>
+<li>If <code>k = 2 * i + 1</code>, let <code>maxHeap</code> store 1 element more than <code>minHeap</code>, then <code>maxHeap.size = minHeap.size + 1</code>.</li>
+</ul>
+</li>
+<li>When adding a new number <code>num</code> into our  <code>MedianFinder</code>:
+<ul>
+<li>Firstly, add <code>num</code> to the <code>maxHeap</code>, now <code>maxHeap</code> may contain the big element (which should belong to <code>minHeap</code>). So we need to balance, by removing the highest element from <code>maxHeap</code>, and offer it to <code>minHeap</code>.</li>
+<li>Now, the <code>minHeap</code> might hold more elements than <code>maxHeap</code>, in that case, we need to balance the size, by removing the lowest element from <code>minHeap</code> and offer it back to <code>maxHeap</code>.</li>
+</ul>
+</li>
+<li>When doing <code>findMedian()</code>:
+<ul>
+<li>If <code>maxHeap.size &gt; minHeap.size</code> return top of the <code>maxHeap</code>, which is the highest number amongs low numbers.</li>
+<li>Else if <code>maxHeap.size == minHeap</code> return the <code>(maxHeap.top() + minHeap.top()) / 2</code>.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://assets.leetcode.com/users/images/0eb8feba-cbfa-4f73-8d26-9aad226bdbc5_1626016093.9717174.png" alt="image"></p>
+
+```
+class MedianFinder {
+public:
+    priority_queue<int> maxHeap;
+    priority_queue<int, vector<int>, greater<int>> minHeap;
+    
+    MedianFinder() {
+    }
+    void addNum(int num) {
+        maxHeap.push(num);
+        minHeap.push(maxHeap.top());
+        maxHeap.pop();
+        if (minHeap.size() > maxHeap.size()) {
+            maxHeap.push(minHeap.top());
+            minHeap.pop();
+        }
+    }
+    double findMedian() {
+        if (maxHeap.size() > minHeap.size()) return maxHeap.top();
+        return (maxHeap.top() + minHeap.top()) / 2.0;
+    }
+};
+```
+
+<p><strong>Complexity</strong></p>
+<ul>
+<li>Time:
+<ul>
+<li>Constructor: <code>O(1)</code></li>
+<li>addNum: <code>O(logN)</code></li>
+<li>findMedian: <code>O(1)</code></li>
+</ul>
+</li>
+<li>Space: <code>O(N)</code></li>
+</ul>
+
+## Heap - Merge k Sorted Lists
+<div class="elfjS" data-track-load="description_content"><p>You are given an array of <code>k</code> linked-lists <code>lists</code>, each linked-list is sorted in ascending order.</p>
+
+<p><em>Merge all the linked-lists into one sorted linked-list and return it.</em></p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> lists = [[1,4,5],[1,3,4],[2,6]]
+<strong>Output:</strong> [1,1,2,3,4,4,5,6]
+<strong>Explanation:</strong> The linked-lists are:
+[
+  1-&gt;4-&gt;5,
+  1-&gt;3-&gt;4,
+  2-&gt;6
+]
+merging them into one sorted list:
+1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4-&gt;5-&gt;6
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> lists = []
+<strong>Output:</strong> []
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> lists = [[]]
+<strong>Output:</strong> []
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>k == lists.length</code></li>
+	<li><code>0 &lt;= k &lt;= 10<sup>4</sup></code></li>
+	<li><code>0 &lt;= lists[i].length &lt;= 500</code></li>
+	<li><code>-10<sup>4</sup> &lt;= lists[i][j] &lt;= 10<sup>4</sup></code></li>
+	<li><code>lists[i]</code> is sorted in <strong>ascending order</strong>.</li>
+	<li>The sum of <code>lists[i].length</code> will not exceed <code>10<sup>4</sup></code>.</li>
+</ul>
+</div>
+
+### Solution
+<div class="FN9Jv WRmCx"><p><em><strong>Brief note about Question-</strong></em></p>
+<p>We have to <em><strong>Merge all the linked-lists into one sorted linked-list and return it.</strong></em></p>
+<div class="mb-6 rounded-lg px-3 py-2.5 font-menlo text-sm bg-fill-3 dark:bg-dark-fill-3"><div class="group relative" translate="no"><pre style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none; padding: 0px; margin: 0px; overflow: auto; background: transparent;"><code class="language-rust" style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, &quot;Courier New&quot;, monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none;"><span><span class="token" style="color: rgb(78, 201, 176);">Take</span><span> an example </span><span class="token" style="color: rgb(212, 212, 212);">-</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(78, 201, 176);">Given</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span> k number of sorted linked list </span><span class="token" style="color: rgb(86, 156, 214);">in</span><span> ascending order</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(78, 201, 176);">Aim</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span> </span><span class="token" style="color: rgb(78, 201, 176);">Merge</span><span> them into a single sorted linked list</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>
+</span></span><span>
+</span><span><span></span><span class="token" style="color: rgb(78, 201, 176);">Take</span><span> anthor example which is not given </span><span class="token" style="color: rgb(86, 156, 214);">in</span><span> question</span><span class="token" style="color: rgb(212, 212, 212);">-</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(156, 220, 254);">L1</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">1</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">5</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">7</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">9</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(78, 201, 176);">N</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(156, 220, 254);">L2</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">2</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">4</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">8</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(78, 201, 176);">N</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(156, 220, 254);">L3</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">3</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">6</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(78, 201, 176);">N</span><span>
+</span></span><span>
+</span><span><span></span><span class="token" style="color: rgb(78, 201, 176);">So</span><span> our answer should like this</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(181, 206, 168);">1</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">2</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">3</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">4</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">5</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">6</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">7</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">8</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">9</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> </span><span class="token" style="color: rgb(78, 201, 176);">N</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
+<hr>
+<p><em><strong>Solution - I (Most basic approach, Accepted)-</strong></em></p>
+<ul>
+<li>Okay, so the most basic approach we can think of is, we are obedient person, and not to do anything extra from ourself,</li>
+<li>We will simply do what the question wants us to do, we create an array which store all the elements of all 'k' linked list present in the array.</li>
+<li>After storing all elements, we sort them a/c to their vaules.</li>
+<li>Now, the only task which is left is to link them, so we start linking them.</li>
+</ul>
+<p><strong>Okay, I got the approach, but how i will implement this or code these words-</strong></p>
+<ol>
+<li>We take help of a <code>vector pair</code> which of value and Node type.</li>
+<li>But why vector pair?</li>
+<li>See,  <em>Here we have k different linked list na and each linked list contain some elements so to observe that we need a vector pair.</em></li>
+<li>Okay good, I take a vector pair,so now what i have to do?</li>
+<li>Now we start storing each value in this vector pair.</li>
+<li>After this, by using <code>sort function</code> (present in STL) we sort this vectorAnd at last, i start linking them, it can be done simply by putting next pointer i.e <code>arr[i].second -&gt; next = arr[i + 1].second</code>.</li>
+</ol>
+<div class="mb-6 rounded-lg px-3 py-2.5 font-menlo text-sm bg-fill-3 dark:bg-dark-fill-3"><div class="group relative" translate="no"><pre style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none; padding: 0px; margin: 0px; overflow: auto; background: transparent;"><code class="language-sql" style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, &quot;Courier New&quot;, monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none;"><span><span>Suppose </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span> total number </span><span class="token" style="color: rgb(86, 156, 214);">of</span><span> nodes present </span><span class="token" style="color: rgb(212, 212, 212);">in</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">all</span><span> linked list </span><span class="token" style="color: rgb(212, 212, 212);">is</span><span> </span><span class="token" style="color: rgb(206, 145, 120);">'n'</span><span> 
+</span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">Time</span><span> Complexity </span><span class="token" style="color: rgb(106, 153, 85);">--&gt; O(n log n) // as sorting takes (n log n) time</span><span>
+</span></span><span><span>Space Complexity </span><span class="token" style="color: rgb(106, 153, 85);">--&gt; O(n) // to store nodes of the all linked list</span><span>
+</span></span><span><span>It paases </span><span class="token" style="color: rgb(212, 212, 212);">[</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">133</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">/</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">133</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">in</span><span> built test cases</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
+<p><strong>Code (C++)</strong></p>
+<div class="mb-6 rounded-lg px-3 py-2.5 font-menlo text-sm bg-fill-3 dark:bg-dark-fill-3"><div class="group relative" translate="no"><pre style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none; padding: 0px; margin: 0px; overflow: auto; background: transparent;"><code class="language-cpp" style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, &quot;Courier New&quot;, monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none;"><span><span class="token" style="color: rgb(106, 153, 85);">/**
+</span></span><span> * Definition for singly-linked list.
+</span><span> * struct ListNode {
+</span><span> *     int val;
+</span><span> *     ListNode *next;
+</span><span> *     ListNode() : val(0), next(nullptr) {}
+</span><span> *     ListNode(int x) : val(x), next(nullptr) {}
+</span><span> *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+</span><span> * };
+</span><span><span class="token" style="color: rgb(106, 153, 85);"> */</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">class</span><span> </span><span class="token" style="color: rgb(78, 201, 176);">Solution</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">public</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span>
+</span></span><span><span>    ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">mergeKLists</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span>ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span class="token" style="color: rgb(212, 212, 212);">&amp;</span><span> lists</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> k </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> lists</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">size</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// taking size of the list</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>k </span><span class="token" style="color: rgb(212, 212, 212);">==</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// if size is zero</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> </span><span class="token" style="color: rgb(156, 220, 254);">NULL</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// simply return NULL</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(106, 153, 85);">// making a vector pair where first contain value and second contain node</span><span>
+</span></span><span><span>        vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span>pair</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span class="token" style="color: rgb(212, 212, 212);">&gt;&gt;</span><span> arr</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> 
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> i </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> i </span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span> k</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> i</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// traverse all over the list</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span> curr_list </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> lists</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// extracting current linked list</span><span>
+</span></span><span>            
+</span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">while</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>curr_list </span><span class="token" style="color: rgb(212, 212, 212);">!=</span><span> </span><span class="token" style="color: rgb(156, 220, 254);">NULL</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// while current linked list is NOT NULL</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>                arr</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">push_back</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>curr_list </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> val</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> curr_list</span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// push into vector</span><span>
+</span></span><span><span>                curr_list </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> curr_list </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> next</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(106, 153, 85);">// this does not gurantee that k is zero, </span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(106, 153, 85);">// suppose an array like this [[],[],[],],here k = 3 and size of array is 0</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>arr</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">size</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">==</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// if their is no element i.e zero element</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> </span><span class="token" style="color: rgb(156, 220, 254);">NULL</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(220, 220, 170);">sort</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>arr</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">begin</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> arr</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">end</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// sort the vector on the basis of values</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(106, 153, 85);">// start making links b/w the elements of vector</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> i </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> i </span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span> arr</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">size</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> i</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            arr</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>second </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> next </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> arr</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i </span><span class="token" style="color: rgb(212, 212, 212);">+</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>second</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(106, 153, 85);">// in the next of last node put NULL</span><span>
+</span></span><span><span>        arr</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>arr</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">size</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">-</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>second </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> next </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(156, 220, 254);">NULL</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> arr</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>second</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// return first node of the vector</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
+<hr>
+<p><em><strong>Solution - II (Further optimization in time as well as in space, Using priority queue, Accepted)-</strong></em></p>
+<ul>
+<li>Now, we want to become a good programmer and anyhow we want to optimize our soloution.</li>
+<li>The main point is to observe here is that <em><strong>every linked list is already sorted</strong></em> and our task is just to merge them.</li>
+<li>Our approach to merge linked list is same as about merge function of merge sort.</li>
+<li>In merge sort, we have just two arrays / linked list but here we have 'k' linked list.</li>
+<li>So by using <code>min heap</code> we compare k node values and add the smallest one to the final list.</li>
+<li>One property of min heap we have to remember here is that, <em><strong>it keeps smallest element always on the top,</strong></em> so using that property we merge our k sorted linked list.</li>
+</ul>
+<div class="mb-6 rounded-lg px-3 py-2.5 font-menlo text-sm bg-fill-3 dark:bg-dark-fill-3"><div class="group relative" translate="no"><pre style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none; padding: 0px; margin: 0px; overflow: auto; background: transparent;"><code class="language-sql" style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, &quot;Courier New&quot;, monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none;"><span><span>Suppose </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span> total number </span><span class="token" style="color: rgb(86, 156, 214);">of</span><span> nodes present </span><span class="token" style="color: rgb(212, 212, 212);">in</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">all</span><span> linked list </span><span class="token" style="color: rgb(212, 212, 212);">is</span><span> </span><span class="token" style="color: rgb(206, 145, 120);">'n'</span><span> 
+</span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">Time</span><span> Complexity </span><span class="token" style="color: rgb(106, 153, 85);">--&gt; O(n log k) // as we are using min heap</span><span>
+</span></span><span><span>Space Complexity </span><span class="token" style="color: rgb(106, 153, 85);">--&gt; O(k) // at a single point of time min heap always handle the k elements</span><span>
+</span></span><span><span>It paases </span><span class="token" style="color: rgb(212, 212, 212);">[</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">133</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">/</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">133</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">in</span><span> built test cases</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
+<p><strong>Code (C++)</strong></p>
+<div class="mb-6 rounded-lg px-3 py-2.5 font-menlo text-sm bg-fill-3 dark:bg-dark-fill-3"><div class="group relative" translate="no"><pre style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none; padding: 0px; margin: 0px; overflow: auto; background: transparent;"><code class="language-cpp" style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, &quot;Courier New&quot;, monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none;"><span><span class="token" style="color: rgb(106, 153, 85);">/**
+</span></span><span> * Definition for singly-linked list.
+</span><span> * struct ListNode {
+</span><span> *     int val;
+</span><span> *     ListNode *next;
+</span><span> *     ListNode() : val(0), next(nullptr) {}
+</span><span> *     ListNode(int x) : val(x), next(nullptr) {}
+</span><span> *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+</span><span> * };
+</span><span><span class="token" style="color: rgb(106, 153, 85);"> */</span><span>
+</span></span><span>
+</span><span>
+</span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">class</span><span> </span><span class="token" style="color: rgb(78, 201, 176);">Solution</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">public</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(106, 153, 85);">// we define pair as pi</span><span>
+</span></span><span><span>    </span><span class="token macro directive-hash" style="color: rgb(156, 220, 254);">#</span><span class="token macro directive" style="color: rgb(86, 156, 214);">define</span><span class="token macro" style="color: rgb(156, 220, 254);"> </span><span class="token macro macro-name" style="color: rgb(156, 220, 254);">pi</span><span class="token macro" style="color: rgb(156, 220, 254);"> </span><span class="token macro expression" style="color: rgb(156, 220, 254);">pair</span><span class="token macro expression" style="color: rgb(212, 212, 212);">&lt;</span><span class="token macro expression" style="color: rgb(86, 156, 214);">int</span><span class="token macro expression" style="color: rgb(212, 212, 212);">,</span><span class="token macro expression" style="color: rgb(156, 220, 254);"> ListNode</span><span class="token macro expression" style="color: rgb(212, 212, 212);">*</span><span class="token macro expression" style="color: rgb(156, 220, 254);"> </span><span class="token macro expression" style="color: rgb(212, 212, 212);">&gt;</span><span>
+</span></span><span>    
+</span><span><span>    ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">mergeKLists</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span>ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span class="token" style="color: rgb(212, 212, 212);">&amp;</span><span> lists</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> k </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> lists</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">size</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// taking the size of the linked list</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>k </span><span class="token" style="color: rgb(212, 212, 212);">==</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// if no linked list is present</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> </span><span class="token" style="color: rgb(156, 220, 254);">NULL</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// simply return null</span><span>
+</span></span><span>        
+</span><span><span>        priority_queue</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span>pi</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span>pi</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> greater</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span>pi</span><span class="token" style="color: rgb(212, 212, 212);">&gt;&gt;</span><span> minh</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// making priority queue</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> i </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> i </span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span> k</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> i</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// traverse from the whole array </span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span> curr_list </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> lists</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// extracting current linked list</span><span>
+</span></span><span>            
+</span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>curr_list </span><span class="token" style="color: rgb(212, 212, 212);">!=</span><span> </span><span class="token" style="color: rgb(156, 220, 254);">NULL</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// if element present in the linked list</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>                minh</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">push</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>curr_list </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> val</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> curr_list</span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// push into min heap</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(106, 153, 85);">// this does not gurantee that k is zero, </span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(106, 153, 85);">// suppose an array like this [[],[],[],],here k = 3 and size of array is 0</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>minh</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">size</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">==</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// if their is no element i.e zero element</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> </span><span class="token" style="color: rgb(156, 220, 254);">NULL</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span>        
+</span><span><span>        ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span> head </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">new</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">ListNode</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// can also be called as dummy</span><span>
+</span></span><span><span>        ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span> curr </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> head</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// make a pointer pointing to head</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">while</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>minh</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">empty</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">==</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">false</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// adding further most elements to min heap</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            pair</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span> temp </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> minh</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">top</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// extracting top pair</span><span>
+</span></span><span><span>            minh</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">pop</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// pop that pair</span><span>
+</span></span><span>            
+</span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>temp</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>second </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> next </span><span class="token" style="color: rgb(212, 212, 212);">!=</span><span> </span><span class="token" style="color: rgb(156, 220, 254);">NULL</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// if elements still remaining in the linked list then push them</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>                minh</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">push</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>temp</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>second </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> next </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> val</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> temp</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>second </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> next</span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span>            
+</span><span><span>            curr </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> next </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> temp</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>second</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>            curr </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> curr </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> next</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span>        
+</span><span><span>        curr </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> next </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(156, 220, 254);">NULL</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> 
+</span></span><span><span>        head </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> head </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> next</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// move head, which is actually containg the list</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> head</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// return head</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
+<hr>
+<p><em><strong>Solution - III (Further optimization in space, Accepted)-</strong></em></p>
+<ul>
+<li>Okay, the question arises, if we just have to merge k linked list,</li>
+<li>Is the use of priority queue is necesssary? Can't we do it without using the priority queue?</li>
+<li>The answer is <em><strong>YES</strong></em>, we can do further optimization in space complexity as well.</li>
+<li>We use <code>two pointers</code> for doing this.</li>
+<li>First we put start pointer to zero index and last pointer to last index and after that we start merging them thinking of as two sorted linked list.</li>
+<li>And again we will continue this task until we get a single linked list.</li>
+<li>See commented code, you will get it easily.</li>
+</ul>
+<div class="mb-6 rounded-lg px-3 py-2.5 font-menlo text-sm bg-fill-3 dark:bg-dark-fill-3"><div class="group relative" translate="no"><pre style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none; padding: 0px; margin: 0px; overflow: auto; background: transparent;"><code class="language-sql" style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, &quot;Courier New&quot;, monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none;"><span><span>Suppose </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span> total number </span><span class="token" style="color: rgb(86, 156, 214);">of</span><span> nodes present </span><span class="token" style="color: rgb(212, 212, 212);">in</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">all</span><span> linked list </span><span class="token" style="color: rgb(212, 212, 212);">is</span><span> </span><span class="token" style="color: rgb(206, 145, 120);">'n'</span><span> 
+</span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">Time</span><span> Complexity </span><span class="token" style="color: rgb(106, 153, 85);">--&gt; O(n log k)</span><span>
+</span></span><span><span>Space Complexity </span><span class="token" style="color: rgb(106, 153, 85);">--&gt; O(1) </span><span>
+</span></span><span><span>It paases </span><span class="token" style="color: rgb(212, 212, 212);">[</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">133</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">/</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">133</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">in</span><span> built test cases</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
+<p><strong>Code (C++)</strong></p>
+<div class="mb-6 rounded-lg px-3 py-2.5 font-menlo text-sm bg-fill-3 dark:bg-dark-fill-3"><div class="group relative" translate="no"><pre style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none; padding: 0px; margin: 0px; overflow: auto; background: transparent;"><code class="language-cpp" style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, &quot;Courier New&quot;, monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none;"><span><span class="token" style="color: rgb(106, 153, 85);">/**
+</span></span><span> * Definition for singly-linked list.
+</span><span> * struct ListNode {
+</span><span> *     int val;
+</span><span> *     ListNode *next;
+</span><span> *     ListNode() : val(0), next(nullptr) {}
+</span><span> *     ListNode(int x) : val(x), next(nullptr) {}
+</span><span> *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+</span><span> * };
+</span><span><span class="token" style="color: rgb(106, 153, 85);"> */</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">class</span><span> </span><span class="token" style="color: rgb(78, 201, 176);">Solution</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">public</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(106, 153, 85);">// this do the same work as merge function of merging two values</span><span>
+</span></span><span><span>    ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">merge</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span> first</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span> second</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span> result </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(156, 220, 254);">NULL</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>first </span><span class="token" style="color: rgb(212, 212, 212);">==</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">nullptr</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> second</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>second </span><span class="token" style="color: rgb(212, 212, 212);">==</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">nullptr</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> first</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span>        
+</span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>first </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> val </span><span class="token" style="color: rgb(212, 212, 212);">&lt;=</span><span> second </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> val</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            result </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> first</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>            result </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> next </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">merge</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>first </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> next</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> second</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">else</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            result </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> second</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>            result </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> next </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">merge</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>first</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> second </span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span> next</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> result</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>    ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">mergeKLists</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span>ListNode</span><span class="token" style="color: rgb(212, 212, 212);">*</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span class="token" style="color: rgb(212, 212, 212);">&amp;</span><span> arr</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> k </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> arr</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">size</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// extracting size of array</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>k </span><span class="token" style="color: rgb(212, 212, 212);">==</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// if size of array is value</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> </span><span class="token" style="color: rgb(156, 220, 254);">NULL</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> start </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// start pointer</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> last </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> k </span><span class="token" style="color: rgb(212, 212, 212);">-</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// last pointer</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> temp</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">while</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>last </span><span class="token" style="color: rgb(212, 212, 212);">!=</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// if last pointer not becomes zero</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            start </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>            temp </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> last</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">while</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>start </span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span> temp</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>                </span><span class="token" style="color: rgb(106, 153, 85);">// merge them and store in one of the linked list</span><span>
+</span></span><span><span>                arr</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>start</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">merge</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>arr</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>start</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span>arr</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>temp</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>                start</span><span class="token" style="color: rgb(212, 212, 212);">++</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// increment start</span><span>
+</span></span><span><span>                temp</span><span class="token" style="color: rgb(212, 212, 212);">--</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// decrese start</span><span>
+</span></span><span>                
+</span><span><span>                </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>start </span><span class="token" style="color: rgb(212, 212, 212);">&gt;=</span><span> temp</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// if at any point start passes the temp</span><span>
+</span></span><span><span>                </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>                    last </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> temp</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>                </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> arr</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// return first linked list of the aray as now it contains the all nodes in the sorted order.</span><span>
+</span></span><span>        
+</span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
+</div>
+
+## Heap - Top K Frequent Elements
+<div class="elfjS" data-track-load="description_content"><p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <em>the</em> <code>k</code> <em>most frequent elements</em>. You may return the answer in <strong>any order</strong>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,1,1,2,2,3], k = 2
+<strong>Output:</strong> [1,2]
+</pre><p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1], k = 1
+<strong>Output:</strong> [1]
+</pre>
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+	<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
+	<li><code>k</code> is in the range <code>[1, the number of unique elements in the array]</code>.</li>
+	<li>It is <strong>guaranteed</strong> that the answer is <strong>unique</strong>.</li>
+</ul>
+
+<p>&nbsp;</p>
+<p><strong>Follow up:</strong> Your algorithm's time complexity must be better than <code>O(n log n)</code>, where n is the array's size.</p>
+</div>
+
+### Solution
+
+```
+class Solution {
+public:
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        unordered_map<int,int> map;
+        for(int num : nums){
+            map[num]++;
+        }
+        
+        vector<int> res;
+        // pair<first, second>: first is frequency,  second is number
+        priority_queue<pair<int,int>> pq; 
+        for(auto it = map.begin(); it != map.end(); it++){
+            pq.push(make_pair(it->second, it->first));
+            if(pq.size() > (int)map.size() - k){
+                res.push_back(pq.top().second);
+                pq.pop();
+            }
+        }
+        return res;
+    }
+};
+```
