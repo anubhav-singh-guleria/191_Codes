@@ -1,3 +1,12 @@
+## 
+1. [Implement Stack Using Array](#implement-stack-using-array)
+2. [Implement Queue Using Array](#implement-queue-using-array)
+3. [Implement Stack Using Queues](#implement-stack-using-queues)
+4. [Implement Queue Using Stacks](#implement-queue-using-stacks)
+5. [Valid Parentheses](#valid-parentheses)
+6. [Next Greater Element I](#next-greater-element-i)
+7. [Sort a Stack](#sort-a-stack)
+
 ## Implement Stack using Array
 
 <p><strong>Problem statement:</strong> Implement a stack using an array.</p>
