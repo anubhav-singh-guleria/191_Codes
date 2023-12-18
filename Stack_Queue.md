@@ -1,4 +1,4 @@
-## 
+## Table of Content
 1. [Implement Stack Using Array](#implement-stack-using-array)
 2. [Implement Queue Using Array](#implement-queue-using-array)
 3. [Implement Stack Using Queues](#implement-stack-using-queues)
@@ -77,6 +77,9 @@ int main() {
 </div></div></div>
 </div>
 </article>
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## Implement Queue Using Array
 
@@ -205,6 +208,10 @@ int main() {
 <p>size function: O(1)</p>
 <p><strong>Space Complexity:</strong></p>
 <p>Whole Queue: O(n)</p>
+
+## Go To
+[Table of Content](#table-of-content)
+
 
 ## Implement Stack using Queues
 <div class="elfjS" data-track-load="description_content"><p>Implement a last-in-first-out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal stack (<code>push</code>, <code>top</code>, <code>pop</code>, and <code>empty</code>).</p>
@@ -388,6 +395,9 @@ When you do pop() or top(), first pop all elements of the queue except the tail 
 </span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> q1</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">isEmpty</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">&amp;&amp;</span><span> q2</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">isEmpty</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div>
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## Implement Queue using Stacks
 <div class="elfjS" data-track-load="description_content"><p>Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (<code>push</code>, <code>peek</code>, <code>pop</code>, and <code>empty</code>).</p>
@@ -573,6 +583,9 @@ class MyQueue {
  */
 ```
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Valid Parentheses
 <div class="elfjS" data-track-load="description_content"><p>Given a string <code>s</code> containing just the characters <code>'('</code>, <code>')'</code>, <code>'{'</code>, <code>'}'</code>, <code>'['</code> and <code>']'</code>, determine if the input string is valid.</p>
 
@@ -637,6 +650,9 @@ public:
     }
 };
 ```
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## Next Greater Element I
 <div class="elfjS" data-track-load="description_content"><p>The <strong>next greater element</strong> of some element <code>x</code> in an array is the <strong>first greater</strong> element that is <strong>to the right</strong> of <code>x</code> in the same array.</p>
@@ -712,6 +728,9 @@ public:
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Sort a Stack	
 <h4><strong>Solution idea</strong></h4>
 <p>This idea is similar to the recursive insertion sort, where we pop the top element from the stack and sort the remaining (n - 1) size stack recursively using the same function. After sorting the (n - 1) size stack, we use another helper function&nbsp;<strong>insertTop(s, topElement)</strong>, to insert the top element into the current position of the sorted stack.</p>
@@ -745,3 +764,5 @@ public:
         <span class="token function">insertTop</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> topElement<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+## Go To
+[Table of Content](#table-of-content)
