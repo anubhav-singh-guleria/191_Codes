@@ -1,3 +1,14 @@
+## Table of Content
+1. [Smallest Number on Left](#smallest-number-on-left)
+2. [LRU Cache](#lru-cache)
+3. [LFU Cache](#lfu-cache)
+4. [Largest Rectangle in Histogram](#largest-rectangle-in-histogram)
+5. [Sliding Window Maximum](#sliding-window-maximum)
+6. [Min Stack](#min-stack)
+7. [Rotting Oranges](#rotting-oranges)
+8. [Online Stock Span](#online-stock-span)
+9. [Find the Celebrity](#find-the-celebrity)
+
 ## Smallest number on left
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size:20px">Given an array <strong>a&nbsp;</strong>of integers of length <strong>n</strong>, find the nearest smaller number for every element such that the smaller element is on left side.If no small element present on the left print -1.</span></p>
 
@@ -64,6 +75,8 @@ public:
     }
 };
 ```
+## Go To
+[Table of Content](#table-of-content)
 
 ## LRU Cache
 
@@ -228,6 +241,9 @@ lRUCache.get(4);    // return 4
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span>
 </span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3h49a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1h49a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div>
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## LFU Cache
 <div class="elfjS" data-track-load="description_content"><p>Design and implement a data structure for a <a href="https://en.wikipedia.org/wiki/Least_frequently_used" target="_blank">Least Frequently Used (LFU)</a> cache.</p>
@@ -416,6 +432,9 @@ class LFUCache {
 </ul>
 <hr></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Largest Rectangle in Histogram
 <div class="elfjS" data-track-load="description_content"><p>Given an array of integers <code>heights</code> representing the histogram's bar height where the width of each bar is <code>1</code>, return <em>the area of the largest rectangle in the histogram</em>.</p>
 
@@ -524,6 +543,9 @@ public:
 };
 ```
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Sliding Window Maximum
 <div class="elfjS" data-track-load="description_content"><p>You are given an array of integers&nbsp;<code>nums</code>, there is a sliding window of size <code>k</code> which is moving from the very left of the array to the very right. You can only see the <code>k</code> numbers in the window. Each time the sliding window moves right by one position.</p>
 
@@ -602,6 +624,9 @@ Window position                Max
 </span></span><span><span>		</span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span>		</span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> r</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
 </span></span><span><span>	</span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div>
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## Min Stack
 <div class="elfjS" data-track-load="description_content"><p>Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.</p>
@@ -682,6 +707,9 @@ minStack.getMin(); // return -2
 		}
 	};
 ```
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## Rotting Oranges
 <div class="elfjS" data-track-load="description_content"><p>You are given an <code>m x n</code> <code>grid</code> where each cell can have one of three values:</p>
@@ -780,6 +808,9 @@ minStack.getMin(); // return -2
 </span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Online Stock Span
 <div class="elfjS" data-track-load="description_content"><p>Design an algorithm that collects daily price quotes for some stock and returns <strong>the span</strong> of that stock's price for the current day.</p>
 
@@ -866,7 +897,10 @@ stockSpanner.next(85);  // return 6
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
 <p><img src="https://assets.leetcode.com/users/el-seoudy/image_1589879595.png" alt="image"></p>
-<p><strong>Please upvote if you liked it.</strong> &lt;3</p></div>
+
+
+## Go To
+[Table of Content](#table-of-content)
 
 ## Find the Celebrity
 <p>Suppose you are at a party with <code>n</code> people labeled from <code>0</code> to <code>n - 1</code> and among them, there may exist one celebrity. The definition of a celebrity is that all the other <code>n - 1</code> people know the celebrity, but the celebrity does not know any of them.</p>
@@ -945,3 +979,7 @@ public:
     }
 };
 ```
+
+## Go To
+[Table of Content](#table-of-content)
+
