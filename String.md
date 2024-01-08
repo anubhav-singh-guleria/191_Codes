@@ -1,5 +1,13 @@
 ## Table of Content
+1. [Reverse Words in a String](#reverse-words-in-a-string)
+2. [Longest Palindromic Substring](#longest-palindromic-substring)
+3. [Roman to Integer](#roman-to-integer)
+4. [Integer to Roman](#integer-to-roman)
+5. [String to Integer (atoi)](#string-to-integer-atoi)
+6. [Longest Common Prefix](#longest-common-prefix)
+7. [Rabin-Karp Algorithm for Repeated String Match](#rabin-karp-algorithm-repeated-string-match)
 
+   
 ## Reverse Words in a String
 <div class="elfjS" data-track-load="description_content"><p>Given an input string <code>s</code>, reverse the order of the <strong>words</strong>.</p>
 
