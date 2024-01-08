@@ -67,6 +67,8 @@ string reverseWords(string s) {
 };
 ```
 
+## Go To
+[Table of Content](#table-of-content)
 ## Longest Palindromic Substring
 <div class="elfjS" data-track-load="description_content"><p>Given a string <code>s</code>, return <em>the longest</em> <span data-keyword="palindromic-string" class=" cursor-pointer relative text-dark-blue-s text-sm"><div class="popover-wrapper inline-block" data-headlessui-state=""><div><div aria-expanded="false" data-headlessui-state="" id="headlessui-popover-button-:rr:"><div><em>palindromic</em></div></div><div style="position: fixed; z-index: 40; inset: 0px auto auto 0px; transform: translate(282px, 182px);"></div></div></div></span> <span data-keyword="substring-nonempty" class=" cursor-pointer relative text-dark-blue-s text-sm"><div class="popover-wrapper inline-block" data-headlessui-state=""><div><div aria-expanded="false" data-headlessui-state="" id="headlessui-popover-button-:rt:"><div><em>substring</em></div></div><div style="position: fixed; z-index: 40; inset: 0px auto auto 0px; transform: translate(350px, 182px);"></div></div></div></span> in <code>s</code>.</p>
 
@@ -166,7 +168,10 @@ and likewise for others.</p>
 </span></span><span><span>   </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> s</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">substr</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>start</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> end</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div>
-
+	
+## Go To
+[Table of Content](#table-of-content)
+	
 ## Roman to Integer
 <div class="elfjS" data-track-load="description_content"><p>Roman numerals are represented by seven different symbols:&nbsp;<code>I</code>, <code>V</code>, <code>X</code>, <code>L</code>, <code>C</code>, <code>D</code> and <code>M</code>.</p>
 
@@ -304,6 +309,9 @@ M             1000</pre>
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="h-4 w-4 cursor-pointer fill-gray-6 hover:fill-gray-7 dark:fill-dark-gray-6 dark:hover:fill-dark-gray-7 absolute right-0 top-0" data-state="closed"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="h-4 w-4 text-gray-6 hover:text-gray-7 dark:text-dark-gray-6 dark:hover:text-dark-gray-7 hidden group-hover:block"><path fill-rule="evenodd" d="M11.3 8.3H19a3 3 0 013 3V19a3 3 0 01-3 3h-7.7a3 3 0 01-3-3v-7.7a3 3 0 013-3zm0 2a1 1 0 00-1 1V19a1 1 0 001 1H19a1 1 0 001-1v-7.7a1 1 0 00-1-1h-7.7zm-5.6 3.4a1 1 0 110 2h-.9A2.8 2.8 0 012 12.9V4.8A2.8 2.8 0 014.8 2h8.1a2.8 2.8 0 012.8 2.8v.9a1 1 0 11-2 0v-.9a.8.8 0 00-.8-.8H4.8a.8.8 0 00-.8.8v8.1a.8.8 0 00.8.8h.9z" clip-rule="evenodd"></path></svg></div></div></div></div></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Integer to Roman 
 <div class="elfjS" data-track-load="description_content"><p>Roman numerals are represented by seven different symbols:&nbsp;<code>I</code>, <code>V</code>, <code>X</code>, <code>L</code>, <code>C</code>, <code>D</code> and <code>M</code>.</p>
 
@@ -374,6 +382,8 @@ public:
     }
 };
 ```
+## Go To
+[Table of Content](#table-of-content)
 
 ## String to Integer (atoi)
 <div class="elfjS" data-track-load="description_content"><p>Implement the <code>myAtoi(string s)</code> function, which converts a string to a 32-bit signed integer (similar to C/C++'s <code>atoi</code> function).</p>
@@ -546,6 +556,9 @@ Since 4193 is in the range [-2<sup>31</sup>, 2<sup>31</sup> - 1], the final resu
 </li>
 </ul></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Longest Common Prefix
 <div class="elfjS" data-track-load="description_content"><p>Write a function to find the longest common prefix string amongst an array of strings.</p>
 
@@ -595,5 +608,97 @@ public:
     }
 };
 ```
+## Go To
+[Table of Content](#table-of-content)
 
-## 
+## Rabin-Karp algorithm (Repeated String Match)
+<div class="elfjS" data-track-load="description_content"><p>Given two strings <code>a</code> and <code>b</code>, return <em>the minimum number of times you should repeat string </em><code>a</code><em> so that string</em> <code>b</code> <em>is a substring of it</em>. If it is impossible for <code>b</code>​​​​​​ to be a substring of <code>a</code> after repeating it, return <code>-1</code>.</p>
+
+<p><strong>Notice:</strong> string <code>"abc"</code> repeated 0 times is <code>""</code>, repeated 1 time is <code>"abc"</code> and repeated 2 times is <code>"abcabc"</code>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> a = "abcd", b = "cdabcdab"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> We return 3 because by repeating a three times "ab<strong>cdabcdab</strong>cd", b is a substring of it.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> a = "a", b = "aa"
+<strong>Output:</strong> 2
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= a.length, b.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>a</code> and <code>b</code> consist of lowercase English letters.</li>
+</ul>
+</div>
+
+### Solution
+#### How does Rabin Karp Algorithm Works
+<ol><li>Calculate hash value of <em>pattern</em></li><li>Calculate hash value of first <em>M</em> characters of <em>text</em></li><li>Compare both hash values</li><li>If they are unequal, calculate hash value for next <em>M</em> characters of <em>text</em> and compare again.</li><li>If they are equal, perform a brute force comparison.</li></ol>
+<p>This technique results in only one comparison per text sub-sequence and brute force is only required when the hash values match.</p>
+
+<p>The task is to determine how many times we need to repeat string <code>a</code> such that string <code>b</code> becomes a substring of the repeated string <code>a</code>.</p>
+<p>Here are important things to note from the problem:</p>
+<ul>
+<li>If it is not possible for <code>b</code> to be a substring of <code>a</code> no matter how many times <code>a</code> is repeated, we should return <code>-1</code>.</li>
+<li>A string repeated 0 times is an empty string, repeated once remains the same, and so on.</li>
+</ul>
+<p>The challenge lies in finding the minimum number of repetitions needed.</p>
+
+```
+class Solution {
+private:
+    int BASE = 1000000;
+public:
+    int repeatedStringMatch(string A, string B) {
+        if(A == B) return 1;
+        int count = 1;
+        string source = A;
+        while(source.size() < B.size()){
+            count++;
+            source+=A;
+        }
+        if(source == B) return count;
+        if(Rabin_Karp(source,B) != -1) return count;
+        if(Rabin_Karp(source+A,B) != -1) return count+1;
+        return -1;
+    }
+    int Rabin_Karp(string source, string target){
+        if(source == "" or target == "") return -1;
+        int m = target.size();
+        int power = 1;
+        for(int i = 0;i<m;i++){
+            power = (power*31)%BASE;
+        }
+        int targetCode = 0;
+        for(int i = 0;i<m;i++){
+            targetCode = (targetCode*31+target[i])%BASE;
+        }
+        int hashCode = 0;
+        for(int i = 0;i<source.size();i++){
+            hashCode = (hashCode*31 + source[i])%BASE;
+            if(i<m-1) continue;
+            if(i>=m){
+                hashCode = (hashCode-source[i-m]*power)%BASE;
+            }
+            if(hashCode<0)
+                hashCode+=BASE;
+            if(hashCode == targetCode){
+                if(source.substr(i-m+1,m) == target)
+                    return i-m+1;
+            }
+        }
+        return -1;
+    }
+};
+```
+
+## Go To
+[Table of Content](#table-of-content)
