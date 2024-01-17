@@ -1,7 +1,11 @@
 
 ## Table of Content
 
-
+1. [KMP Algorithm - LPS (PI) Array](#kmp-algo--lpspi-array)
+2. [Minimum Characters Required to Make a String Palindromic](#minimum-characters-required-to-make-a-string-palindromic)
+3. [Valid Anagram](#valid-anagram)
+4. [Count and Say](#count-and-say)
+5. [Compare Version Numbers](#compare-version-numbers)
 
 ## KMP algo / LPS(pi) array	
 <div class="elfjS" data-track-load="description_content"><p>Given two strings <code>needle</code> and <code>haystack</code>, return the index of the first occurrence of <code>needle</code> in <code>haystack</code>, or <code>-1</code> if <code>needle</code> is not part of <code>haystack</code>.</p>
