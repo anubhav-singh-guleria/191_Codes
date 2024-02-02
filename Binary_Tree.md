@@ -527,4 +527,89 @@ Acutally it does not matter whether you use a priorityQueue or a List. The time 
 </span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code></pre><div class="z-base-1 hidden rounded border group-hover:block border-border-quaternary dark:border-border-quaternary bg-layer-02 dark:bg-layer-02 absolute -right-1.5 -top-0.5"><div class="relative cursor-pointer flex h-[22px] w-[22px] items-center justify-center bg-layer-02 dark:bg-layer-02 hover:bg-fill-tertiary dark:hover:bg-fill-tertiary rounded-[4px]" data-state="closed"><div><div data-state="closed"><div class="relative text-[12px] leading-[normal] p-[1px] before:block before:h-3 before:w-3 h-3.5 w-3.5 text-text-primary dark:text-text-primary"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" class="svg-inline--fa fa-clone absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M64 464H288c8.8 0 16-7.2 16-16V384h48v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h64v48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16zM224 304H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16V288c0 8.8 7.2 16 16 16zm-64-16V64c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V288c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64z"></path></svg></div></div></div></div></div></div></div></div>
 
-## 
+## Print Root to Node Path in a Binary Tree
+<p><strong>Examples</strong>:</p>
+<pre class="wp-block-preformatted"><img class="lazy-loaded" loading="lazy" src="https://lh6.googleusercontent.com/3Y6B1aQuy3qLmqr0CpuGqyJoExise4gMGNEuScunj_D9FCBKLO0O44xAEme7zj6sEBodlMnz4lGc3kF2rLn3OTM8W_7C9tSzU5aIi8NerFoWb3iwhkwz34P-dZToSgOxmGkLx4Ps" data-lazy-type="image" data-src="https://lh6.googleusercontent.com/3Y6B1aQuy3qLmqr0CpuGqyJoExise4gMGNEuScunj_D9FCBKLO0O44xAEme7zj6sEBodlMnz4lGc3kF2rLn3OTM8W_7C9tSzU5aIi8NerFoWb3iwhkwz34P-dZToSgOxmGkLx4Ps" width="624" height="351"><noscript><img loading="lazy" src="https://lh6.googleusercontent.com/3Y6B1aQuy3qLmqr0CpuGqyJoExise4gMGNEuScunj_D9FCBKLO0O44xAEme7zj6sEBodlMnz4lGc3kF2rLn3OTM8W_7C9tSzU5aIi8NerFoWb3iwhkwz34P-dZToSgOxmGkLx4Ps" width="624" height="351"></noscript></pre>
+<pre class="wp-block-preformatted"><img class="lazy-loaded" loading="lazy" src="https://lh6.googleusercontent.com/oD5GCw00nvrkMxJNXpimy4YGbQ_YgdQ6xItZ8lD-63qxJc9TCY3gfN0hJDYPEJraKazgejxYhS3Eta997-xsvxbT11mru327vKZZV0XGV884wjoE3KupSalGMZ7SxeJmq0lB7nIk" data-lazy-type="image" data-src="https://lh6.googleusercontent.com/oD5GCw00nvrkMxJNXpimy4YGbQ_YgdQ6xItZ8lD-63qxJc9TCY3gfN0hJDYPEJraKazgejxYhS3Eta997-xsvxbT11mru327vKZZV0XGV884wjoE3KupSalGMZ7SxeJmq0lB7nIk" width="624" height="351"><noscript><img loading="lazy" src="https://lh6.googleusercontent.com/oD5GCw00nvrkMxJNXpimy4YGbQ_YgdQ6xItZ8lD-63qxJc9TCY3gfN0hJDYPEJraKazgejxYhS3Eta997-xsvxbT11mru327vKZZV0XGV884wjoE3KupSalGMZ7SxeJmq0lB7nIk" width="624" height="351"></noscript></pre>
+<p><strong>Intuition:&nbsp;</strong></p>
+<p>First of all, we need to find the node V in our tree for which we need to find the path. We can use any depth-first traversal technique (preorder, inorder, postorder) in order to find the required node.</p>
+<p>If we look at the diagram below, we see that whenever we find the required node, its path is well present in our recursion call stack. We just need to figure out how we can use the recursive calls to print the required path.</p>
+<p><img class="lazy-loaded" loading="lazy" width="624" height="351" src="https://lh3.googleusercontent.com/9KlhSI_huiydySMjCmLzo1LDOCd3MAvnobdLZqQH_EA-R6AX32H7BsHT0yNxv2D3IfpVdUKJLpeo0uNIqRzCY3w4sFWCAKVF9Seo9NZ82FOTssLdnLQxLFWFQRTuRQT28kp-K8I6" data-lazy-type="image" data-src="https://lh3.googleusercontent.com/9KlhSI_huiydySMjCmLzo1LDOCd3MAvnobdLZqQH_EA-R6AX32H7BsHT0yNxv2D3IfpVdUKJLpeo0uNIqRzCY3w4sFWCAKVF9Seo9NZ82FOTssLdnLQxLFWFQRTuRQT28kp-K8I6"><noscript><img loading="lazy" width="624" height="351" src="https://lh3.googleusercontent.com/9KlhSI_huiydySMjCmLzo1LDOCd3MAvnobdLZqQH_EA-R6AX32H7BsHT0yNxv2D3IfpVdUKJLpeo0uNIqRzCY3w4sFWCAKVF9Seo9NZ82FOTssLdnLQxLFWFQRTuRQT28kp-K8I6"></noscript></p>
+<p><strong>Approach:&nbsp;</strong></p>
+<p>We will use an external list to store our path. This list will be passed by reference to our recursive function. Moreover, we can set the return value of our function as boolean, this will help us to know whether node V was found in a subtree or not.</p>
+<p>The algorithm steps can be stated as follows:</p>
+<ul><li>We pass the function with our root node, the path list and node V.</li><li>For the base case, if root is pointing to NULL, we return false as clearly node V can’t be found.</li><li>Now we first push the node to our path list.</li><li>Then we check whether the current node is the target node or not, if it is then no further execution is needed and we return to the parent function.</li><li>If not, then we recursively call its left and right child to find the target node V. If any one of them returns true, it means we have found node V at lower levels and return true from the current function.</li><li>If the value is not found at the current node and neither in any of the recursive calls, it means that the value is not present in the current sub-tree, therefore we pop out the current node from the path list and return false.</li></ul>
+
+```
+#include <bits/stdc++.h>
+
+using namespace std;
+
+struct node {
+  int data;
+  struct node * left, * right;
+};
+
+bool getPath(node * root, vector < int > & arr, int x) {
+  // if root is NULL
+  // there is no path
+  if (!root)
+    return false;
+
+  // push the node's value in 'arr'
+  arr.push_back(root -> data);
+
+  // if it is the required node
+  // return true
+  if (root -> data == x)
+    return true;
+
+  // else check whether the required node lies
+  // in the left subtree or right subtree of
+  // the current node
+  if (getPath(root -> left, arr, x) ||
+    getPath(root -> right, arr, x))
+    return true;
+
+  // required node does not lie either in the
+  // left or right subtree of the current node
+  // Thus, remove current node's value from
+  // 'arr'and then return false   
+  arr.pop_back();
+  return false;
+}
+
+struct node * newNode(int data) {
+  struct node * node = (struct node * ) malloc(sizeof(struct node));
+  node -> data = data;
+  node -> left = NULL;
+  node -> right = NULL;
+
+  return (node);
+}
+
+int main() {
+
+  struct node * root = newNode(1);
+  root -> left = newNode(2);
+  root -> left -> left = newNode(4);
+  root -> left -> right = newNode(5);
+  root -> left -> right -> left = newNode(6);
+  root -> left -> right -> right = newNode(7);
+  root -> right = newNode(3);
+
+  vector < int > arr;
+
+  bool res;
+  res = getPath(root, arr, 7);
+
+  cout << "The path is ";
+  for (auto it: arr) {
+    cout << it << " ";
+  }
+
+  return 0;
+}
+```
+
+##
