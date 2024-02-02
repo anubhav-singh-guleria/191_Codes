@@ -1,5 +1,14 @@
 ## Table of Content
 
+1. [Morris Inorder Traversal](#morris-inorder-traversal)
+2. [Morris Preorder Traversal](#morris-preorder-traversal)
+3. [Binary Tree Right Side View](#binary-tree-right-side-view)
+4. [Bottom View of Binary Tree](#bottom-view-of-binary-tree)
+5. [Preorder, Inorder, Postorder Traversals in One Traversal](#preorder-inorder-postorder-traversals-in-one-traversal)
+6. [Vertical Order Traversal of a Binary Tree](#vertical-order-traversal-of-a-binary-tree)
+7. [Print Root-to-Node Path in a Binary Tree](#print-root-to-node-path-in-a-binary-tree)
+8. [Maximum Width of Binary Tree](#maximum-width-of-binary-tree)
+
 ## Morris Inorder Traversal
 <h4 id="approach-3-morris-traversal">Morris Traversal</h4>
 <p>In this method, we have to use a new data structure - Threaded Binary Tree, and the strategy is as follows:</p>
