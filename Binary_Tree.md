@@ -1,3 +1,5 @@
+## Table of Content
+
 ## Morris Inorder Traversal
 <h4 id="approach-3-morris-traversal">Morris Traversal</h4>
 <p>In this method, we have to use a new data structure - Threaded Binary Tree, and the strategy is as follows:</p>
@@ -82,7 +84,8 @@ class Solution {
     }
 }
 ```
-
+## Go To
+[Table of Content](#table-of-content)
 ## Morris Preorder Traversal
 
 ```
@@ -113,7 +116,8 @@ class Solution {
     }
 }
 ```
-
+## Go To
+[Table of Content](#table-of-content)
 ## Binary Tree Right Side View
 <div class="elfjS" data-track-load="description_content"><p>Given the <code>root</code> of a binary tree, imagine yourself standing on the <strong>right side</strong> of it, return <em>the values of the nodes you can see ordered from top to bottom</em>.</p>
 
@@ -177,7 +181,8 @@ public:
     }
 };
 ```
-
+## Go To
+[Table of Content](#table-of-content)
 ## Bottom View of Binary Tree
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a binary tree, print the bottom view from left to right.<br>
 A node is included in bottom view if it can be seen when we look at the tree from bottom.</span></p>
@@ -306,6 +311,8 @@ void bottomview(Tree * root){
     }
 }
 ```
+## Go To
+[Table of Content](#table-of-content)
 
 ## Preorder Inorder Postorder Traversals in One Traversal
 <h3><strong>Solution :</strong></h3>
@@ -426,6 +433,9 @@ int main() {
 }
 ```
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Vertical Order Traversal of a Binary Tree
 <div class="elfjS" data-track-load="description_content"><p>Given the <code>root</code> of a binary tree, calculate the <strong>vertical order traversal</strong> of the binary tree.</p>
 
@@ -527,6 +537,9 @@ Acutally it does not matter whether you use a priorityQueue or a List. The time 
 </span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code></pre><div class="z-base-1 hidden rounded border group-hover:block border-border-quaternary dark:border-border-quaternary bg-layer-02 dark:bg-layer-02 absolute -right-1.5 -top-0.5"><div class="relative cursor-pointer flex h-[22px] w-[22px] items-center justify-center bg-layer-02 dark:bg-layer-02 hover:bg-fill-tertiary dark:hover:bg-fill-tertiary rounded-[4px]" data-state="closed"><div><div data-state="closed"><div class="relative text-[12px] leading-[normal] p-[1px] before:block before:h-3 before:w-3 h-3.5 w-3.5 text-text-primary dark:text-text-primary"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" class="svg-inline--fa fa-clone absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M64 464H288c8.8 0 16-7.2 16-16V384h48v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h64v48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16zM224 304H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16V288c0 8.8 7.2 16 16 16zm-64-16V64c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V288c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64z"></path></svg></div></div></div></div></div></div></div></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Print Root to Node Path in a Binary Tree
 <p><strong>Examples</strong>:</p>
 <pre class="wp-block-preformatted"><img class="lazy-loaded" loading="lazy" src="https://lh6.googleusercontent.com/3Y6B1aQuy3qLmqr0CpuGqyJoExise4gMGNEuScunj_D9FCBKLO0O44xAEme7zj6sEBodlMnz4lGc3kF2rLn3OTM8W_7C9tSzU5aIi8NerFoWb3iwhkwz34P-dZToSgOxmGkLx4Ps" data-lazy-type="image" data-src="https://lh6.googleusercontent.com/3Y6B1aQuy3qLmqr0CpuGqyJoExise4gMGNEuScunj_D9FCBKLO0O44xAEme7zj6sEBodlMnz4lGc3kF2rLn3OTM8W_7C9tSzU5aIi8NerFoWb3iwhkwz34P-dZToSgOxmGkLx4Ps" width="624" height="351"><noscript><img loading="lazy" src="https://lh6.googleusercontent.com/3Y6B1aQuy3qLmqr0CpuGqyJoExise4gMGNEuScunj_D9FCBKLO0O44xAEme7zj6sEBodlMnz4lGc3kF2rLn3OTM8W_7C9tSzU5aIi8NerFoWb3iwhkwz34P-dZToSgOxmGkLx4Ps" width="624" height="351"></noscript></pre>
@@ -612,4 +625,96 @@ int main() {
 }
 ```
 
-##
+## Go To
+[Table of Content](#table-of-content)
+
+## Maximum Width of Binary Tree
+<div class="elfjS" data-track-load="description_content"><p>Given the <code>root</code> of a binary tree, return <em>the <strong>maximum width</strong> of the given tree</em>.</p>
+
+<p>The <strong>maximum width</strong> of a tree is the maximum <strong>width</strong> among all levels.</p>
+
+<p>The <strong>width</strong> of one level is defined as the length between the end-nodes (the leftmost and rightmost non-null nodes), where the null nodes between the end-nodes that would be present in a complete binary tree extending down to that level are also counted into the length calculation.</p>
+
+<p>It is <strong>guaranteed</strong> that the answer will in the range of a <strong>32-bit</strong> signed integer.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/05/03/width1-tree.jpg" style="width: 359px; height: 302px;">
+<pre><strong>Input:</strong> root = [1,3,2,5,3,null,9]
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> The maximum width exists in the third level with length 4 (5,3,null,9).
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/14/maximum-width-of-binary-tree-v3.jpg" style="width: 442px; height: 422px;">
+<pre><strong>Input:</strong> root = [1,3,2,5,null,null,9,6,null,7]
+<strong>Output:</strong> 7
+<strong>Explanation:</strong> The maximum width exists in the fourth level with length 7 (6,null,null,null,null,null,7).
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/05/03/width3-tree.jpg" style="width: 289px; height: 299px;">
+<pre><strong>Input:</strong> root = [1,3,2,5]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> The maximum width exists in the second level with length 2 (3,2).
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in the tree is in the range <code>[1, 3000]</code>.</li>
+	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+</div>
+
+### Solution
+
+```
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int widthOfBinaryTree(TreeNode* root) {
+        if (!root) return 0;
+        int maxWidth = 0;
+        queue<TreeNode*> node_q;
+        queue<unsigned long long> index_q;
+        node_q.push(root);
+        index_q.push(1);
+        while (!node_q.empty()) {
+            int size = node_q.size();
+            unsigned long long leftIndex = index_q.front(), rightIndex = 0;
+            for (int i = 0; i < size; ++i) {
+                TreeNode* curr = node_q.front();
+                unsigned long long index = index_q.front();
+                node_q.pop();
+                index_q.pop();
+                rightIndex = index;
+                if (curr->left) {
+                    node_q.push(curr->left);
+                    index_q.push(index * 2);
+                }
+                if (curr->right) {
+                    node_q.push(curr->right);
+                    index_q.push(index * 2 + 1);
+                }
+            }
+            maxWidth = max(maxWidth, (int)(rightIndex - leftIndex + 1));
+        }
+        return maxWidth;
+    }
+};
+```
+
+## Go To
+[Table of Content](#table-of-content)
