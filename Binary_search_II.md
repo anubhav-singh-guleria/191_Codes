@@ -1,5 +1,11 @@
 ## Table of Content
-
+1. [Maximum Depth of Binary Tree](#maximum-depth-of-binary-tree)
+2. [Diameter of Binary Tree](#diameter-of-binary-tree)
+3. [Balanced Binary Tree](#balanced-binary-tree)
+4. [Lowest Common Ancestor of a Binary Tree](#lowest-common-ancestor-of-a-binary-tree)
+5. [Same Tree](#same-tree)
+6. [Binary Tree Zigzag Level Order Traversal](#binary-tree-zigzag-level-order-traversal)
+7. [Boundary Traversal of Binary Tree](#boundary-traversal-of-binary-tree)
 
 ## Maximum Depth of Binary Tree
 <div class="elfjS" data-track-load="description_content"><p>Given the <code>root</code> of a binary tree, return <em>its maximum depth</em>.</p>
