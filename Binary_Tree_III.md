@@ -1,4 +1,11 @@
 ## Table of Content
+1. [Binary Tree Maximum Path Sum](#binary-tree-maximum-path-sum)
+2. [Construct Binary Tree from Preorder and Inorder Traversal](#construct-binary-tree-from-preorder-and-inorder-traversal)
+3. [Construct Binary Tree from Inorder and Postorder Traversal](#construct-binary-tree-from-inorder-and-postorder-traversal)
+4. [Symmetric Tree](#symmetric-tree)
+5. [Flatten Binary Tree to Linked List](#flatten-binary-tree-to-linked-list)
+6. [Mirror Tree](#mirror-tree)
+7. [Children Sum Property](#children-sum-property)
 
 ## Binary Tree Maximum Path Sum
 <div class="elfjS" data-track-load="description_content"><p>A <strong>path</strong> in a binary tree is a sequence of nodes where each pair of adjacent nodes in the sequence has an edge connecting them. A node can only appear in the sequence <strong>at most once</strong>. Note that the path does not need to pass through the root.</p>
