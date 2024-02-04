@@ -1,3 +1,5 @@
+## Table of Content
+
 ## Binary Tree Maximum Path Sum
 <div class="elfjS" data-track-load="description_content"><p>A <strong>path</strong> in a binary tree is a sequence of nodes where each pair of adjacent nodes in the sequence has an edge connecting them. A node can only appear in the sequence <strong>at most once</strong>. Note that the path does not need to pass through the root.</p>
 
@@ -50,7 +52,8 @@ public class Solution {
     }
 }
 ```
-
+## Go To
+[Table of Content](#table-of-content)
 ## Construct Binary Tree from Preorder and Inorder Traversal
 <div class="elfjS" data-track-load="description_content"><p>Given two integer arrays <code>preorder</code> and <code>inorder</code> where <code>preorder</code> is the preorder traversal of a binary tree and <code>inorder</code> is the inorder traversal of the same tree, construct and return <em>the binary tree</em>.</p>
 
@@ -137,6 +140,8 @@ Then we create a <code>new</code> <code>node</code> with <code>inorder</code>[pi
 <strong>Space Complexity : O(N)</strong></p>
 <hr></div></div>
 
+## Go To
+[Table of Content](#table-of-content)
 ## Construct Binary Tree from Inorder and Postorder Traversal
 <div class="elfjS" data-track-load="description_content"><p>Given two integer arrays <code>inorder</code> and <code>postorder</code> where <code>inorder</code> is the inorder traversal of a binary tree and <code>postorder</code> is the postorder traversal of the same tree, construct and return <em>the binary tree</em>.</p>
 
@@ -212,7 +217,8 @@ public:
     }
 };
 ```
-
+## Go To
+[Table of Content](#table-of-content)
 ## Symmetric Tree
 <div class="elfjS" data-track-load="description_content"><p>Given the <code>root</code> of a binary tree, <em>check whether it is a mirror of itself</em> (i.e., symmetric around its center).</p>
 
@@ -255,7 +261,8 @@ private boolean isSymmetricHelp(TreeNode left, TreeNode right){
     return isSymmetricHelp(left.left, right.right) && isSymmetricHelp(left.right, right.left);
 }
 ```
-
+## Go To
+[Table of Content](#table-of-content)
 ## Flatten Binary Tree to Linked List
 <div class="elfjS" data-track-load="description_content"><p>Given the <code>root</code> of a binary tree, flatten the tree into a "linked list":</p>
 
@@ -309,6 +316,8 @@ public void flatten(TreeNode root) {
     prev = root;
 }
 ```
+## Go To
+[Table of Content](#table-of-content)
 ## Mirror Tree
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a Binary Tree, convert it into its mirror.<br>
 <img alt="MirrorTree1" class="aligncenter size-full wp-image-663" src="https://contribute.geeksforgeeks.org/wp-content/uploads/mirrortrees.jpg" style="height:338px; width:591px" title="MirrorTree1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
@@ -371,5 +380,92 @@ Just complete the <strong>function mirror()&nbsp;</strong>that takes <strong>nod
         
     }
 ```
+## Go To
+[Table of Content](#table-of-content)
+## Children Sum Property 
+<div class="entry-content clearfix">
+<p><strong>Problem Statement:&nbsp;Children Sum Property in a Binary Tree.</strong> Write a program that converts any binary tree to one that follows the children sum property.</p>
+<p>The children sum property is defined as, For every node of the tree, the value of a node is equal to the sum of values of its children(left child and right child).</p>
+<p><strong>Note:&nbsp;</strong></p>
+<ul><li>The node values can be increased by 1 any number of times but decrement of any node value is not allowed.</li><li>A value for a NULL node can be assumed as 0.</li><li>You are not allowed to change the structure of the given binary tree.</li></ul>
+<pre class="wp-block-preformatted"><strong>Example:</strong>
+<img class="lazy-loaded" loading="lazy" width="624" height="351" src="https://lh4.googleusercontent.com/1sgVnICzwk4IovVn5L6Ag_hJiLaYzWQPXOX2k59ZY8gCAbsA-Tb0hKA1UWbjeebUqVh31yhVf7Pr36OFIV5E0lPSFe0BqdcdiP7Hg8Lv78krBKYLLF1cKeoFx8eHSD8Y5MIYLt9S" data-lazy-type="image" data-src="https://lh4.googleusercontent.com/1sgVnICzwk4IovVn5L6Ag_hJiLaYzWQPXOX2k59ZY8gCAbsA-Tb0hKA1UWbjeebUqVh31yhVf7Pr36OFIV5E0lPSFe0BqdcdiP7Hg8Lv78krBKYLLF1cKeoFx8eHSD8Y5MIYLt9S"><noscript><img loading="lazy" width="624" height="351" src="https://lh4.googleusercontent.com/1sgVnICzwk4IovVn5L6Ag_hJiLaYzWQPXOX2k59ZY8gCAbsA-Tb0hKA1UWbjeebUqVh31yhVf7Pr36OFIV5E0lPSFe0BqdcdiP7Hg8Lv78krBKYLLF1cKeoFx8eHSD8Y5MIYLt9S"></noscript></pre>
+<p><strong>Pre-req: Tree Traversals</strong></p>
+<p><strong><em>Disclaimer</em></strong>: <em>Don’t jump directly to the solution, try it out yourself first.</em></p>
+<h3><strong>Solution :</strong></h3>
+<p><strong>Intuition:&nbsp;</strong></p>
+<p>The first intuition that comes to our mind is to do a tree traversal and at every node make the node value equal to the sum of value(s) of its children. This approach will work in a tree-like this(given below), if we do a postorder traversal and update the node values after visiting the children.</p>
+<p><img class="lazy-loaded" loading="lazy" width="624" height="351" src="https://lh4.googleusercontent.com/vNaZ4hlCtK0dQk4UDDR-Q_9P1kQVgkcXV_uF9FR6x68wm3-u2V8vehmKrGmiHoz2VYh1PDTBhu4cgo_UZ-xW9IYfvUkTJo-TB0Mv-WgfQFAB_qwhSKOiMA7l_6zSt-_DySqelhGy" data-lazy-type="image" data-src="https://lh4.googleusercontent.com/vNaZ4hlCtK0dQk4UDDR-Q_9P1kQVgkcXV_uF9FR6x68wm3-u2V8vehmKrGmiHoz2VYh1PDTBhu4cgo_UZ-xW9IYfvUkTJo-TB0Mv-WgfQFAB_qwhSKOiMA7l_6zSt-_DySqelhGy"><noscript><img loading="lazy" width="624" height="351" src="https://lh4.googleusercontent.com/vNaZ4hlCtK0dQk4UDDR-Q_9P1kQVgkcXV_uF9FR6x68wm3-u2V8vehmKrGmiHoz2VYh1PDTBhu4cgo_UZ-xW9IYfvUkTJo-TB0Mv-WgfQFAB_qwhSKOiMA7l_6zSt-_DySqelhGy"></noscript></p>
+<p>As in the given tree, every node value is less than the sum of the node values of its children; this approach works. Now we will see where this approach will fail and why. If we consider the following case:</p>
+<p><img class="lazy-loaded" loading="lazy" width="448" height="385" src="https://lh6.googleusercontent.com/KO6I3CQo3I1aUewJ0FHU4RK64R0lUrwref89GuHbRdd8ImcIqYjXHhcOMpjWQRR3tU7H5PXc9oeNKmxOFJk8cFTPnOHRrAzmlBZJiGXB6_r_2hVNSG2ibYNBbztVjuTIc0mRC1OA" data-lazy-type="image" data-src="https://lh6.googleusercontent.com/KO6I3CQo3I1aUewJ0FHU4RK64R0lUrwref89GuHbRdd8ImcIqYjXHhcOMpjWQRR3tU7H5PXc9oeNKmxOFJk8cFTPnOHRrAzmlBZJiGXB6_r_2hVNSG2ibYNBbztVjuTIc0mRC1OA"><noscript><img loading="lazy" width="448" height="385" src="https://lh6.googleusercontent.com/KO6I3CQo3I1aUewJ0FHU4RK64R0lUrwref89GuHbRdd8ImcIqYjXHhcOMpjWQRR3tU7H5PXc9oeNKmxOFJk8cFTPnOHRrAzmlBZJiGXB6_r_2hVNSG2ibYNBbztVjuTIc0mRC1OA"></noscript></p>
+<ul><li>In case (i), we see that the root node’s value is greater than the sum of both the leaf nodes. In such a case it is not possible to assign a node as the sum of its children( as we are not allowed to decrement a value). In such a case we simply assign the node value of the children to its parent.</li><li>In case (ii) as we have a tree further down, we first implement the strategy discussed in case(i), now we see that at the second level we are having both the cases where, 35 is less than (43+14) and 35 is greater than (7+9). For the latter case we again implement the strategy and make both its children 35. For the former case, we simply traverse the tree and set it to the sum of its children.</li></ul>
+<p><img class="lazy-loaded" loading="lazy" width="641" height="360" src="https://lh3.googleusercontent.com/yKu216OFkEtLSetoHOT3ktkW-tTLF8QqsaviGRoohdZ17tywS_kmSwM6kp5ZOj1Cs3aYsOHI_b1TOphj3FTk1HiaZHaFZUxcskKKHwP1D-C3jWFK1Hw7QTxTYQZuExH7uoXjI3CZ" data-lazy-type="image" data-src="https://lh3.googleusercontent.com/yKu216OFkEtLSetoHOT3ktkW-tTLF8QqsaviGRoohdZ17tywS_kmSwM6kp5ZOj1Cs3aYsOHI_b1TOphj3FTk1HiaZHaFZUxcskKKHwP1D-C3jWFK1Hw7QTxTYQZuExH7uoXjI3CZ"><noscript><img loading="lazy" width="641" height="360" src="https://lh3.googleusercontent.com/yKu216OFkEtLSetoHOT3ktkW-tTLF8QqsaviGRoohdZ17tywS_kmSwM6kp5ZOj1Cs3aYsOHI_b1TOphj3FTk1HiaZHaFZUxcskKKHwP1D-C3jWFK1Hw7QTxTYQZuExH7uoXjI3CZ"></noscript></p>
+<p><strong>Approach:&nbsp;</strong></p>
+<p>We perform a tree traversal and check whether the current node value is greater than the sum of node values of its children. If this is the case, we simply assign its children to the same value of the current node and then recurse for the children. We do so because we are not allowed to decrement a node value. So we set the children to a large value in order to increment the parent.</p>
+<p>It can happen in subsequent recursions that this child value is further changed, therefore it is necessary that when we return to a node after returning from its children, we set it to the sum of node values of its children explicitly.</p>
+<p>The algorithm approach can be stated as follows:</p>
+<ul><li>We perform a simple dfs traversal on the tree.</li><li>For the base case, if the node is pointing to NULL, we simply return.</li><li>At every node, first we find the sum of values of the children( For a NULL child, value is assumed to be 0).</li><li>If node’s value &gt; sum of children node value, we assign both the children’s value to their parent’s node value.</li><li>Then we visit the children using recursion.</li><li>After we return to the node after visiting its children, we explicitly set its value to be equal to the sum of its values of its children.</li></ul>
 
-## 
+```
+#include <bits/stdc++.h>
+
+using namespace std;
+
+struct node {
+  int data;
+  struct node * left, * right;
+};
+
+void reorder(node * root) {
+  if (root == NULL) return;
+  int child = 0;
+  if (root -> left) {
+    child += root -> left -> data;
+  }
+  if (root -> right) {
+    child += root -> right -> data;
+  }
+
+  if (child < root -> data) {
+    if (root -> left) root -> left -> data = root -> data;
+    else if (root -> right) root -> right -> data = root -> data;
+  }
+
+  reorder(root -> left);
+  reorder(root -> right);
+
+  int tot = 0;
+  if (root -> left) tot += root -> left -> data;
+  if (root -> right) tot += root -> right -> data;
+  if (root -> left || root -> right) root -> data = tot;
+}
+void changeTree(node * root) {
+  reorder(root);
+}
+
+struct node * newNode(int data) {
+  struct node * node = (struct node * ) malloc(sizeof(struct node));
+  node -> data = data;
+  node -> left = NULL;
+  node -> right = NULL;
+
+  return (node);
+}
+
+int main() {
+
+  struct node * root = newNode(2);
+  root -> left = newNode(35);
+  root -> left -> left = newNode(2);
+  root -> left -> right = newNode(3);
+  root -> right = newNode(10);
+  root -> right -> left = newNode(5);
+  root -> right -> right = newNode(2);
+
+  changeTree(root);
+
+  return 0;
+}
+```
+## Go To
+[Table of Content](#table-of-content)
