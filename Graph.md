@@ -1,4 +1,10 @@
 ## Table of Content
+1. [Clone a Graph](#clone-a-graph)
+2. [Course Schedule](#course-schedule)
+3. [Find Cycle in Undirected Graph](#find-cycle-in-undirected-graph)
+4. [Number of Islands](#number-of-islands)
+5. [Is Graph Bipartite](#is-graph-bipartite)
+
 ## Clone a Graph
 <div class="elfjS" data-track-load="description_content"><p>Given a reference of a node in a <strong><a href="https://en.wikipedia.org/wiki/Connectivity_(graph_theory)#Connected_graph" target="_blank">connected</a></strong> undirected graph.</p>
 
