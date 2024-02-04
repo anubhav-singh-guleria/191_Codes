@@ -1,5 +1,13 @@
 ## Table of Content
 
+1. [Populating Next Right Pointers in Each Node](#populating-next-right-pointers-in-each-node)
+2. [Search in a Binary Search Tree](#search-in-a-binary-search-tree)
+3. [Convert Sorted Array to Binary Search Tree](#convert-sorted-array-to-binary-search-tree)
+4. [Construct Binary Search Tree from Preorder Traversal](#construct-binary-search-tree-from-preorder-traversal)
+5. [Validate Binary Search Tree](#validate-binary-search-tree)
+6. [Lowest Common Ancestor of a Binary Search Tree](#lowest-common-ancestor-of-a-binary-search-tree)
+7. [Predecessor and Successor](#predecessor-and-successor)
+
 ## Populating Next Right Pointers in Each Node
 <div class="elfjS" data-track-load="description_content"><p>You are given a <strong>perfect binary tree</strong> where all leaves are on the same level, and every parent has two children. The binary tree has the following definition:</p>
 
