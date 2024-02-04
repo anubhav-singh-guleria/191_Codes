@@ -1,5 +1,8 @@
 ## Table of Content
+1. [Kth Largest Element in a Stream](#kth-largest-element-in-a-stream)
+2. [Flood Fill Algorithm](#flood-fill-algorithm)
 
+   
 ## Kth Largest Element in a Stream
 <div class="elfjS" data-track-load="description_content"><p>Design a class to find the <code>k<sup>th</sup></code> largest element in a stream. Note that it is the <code>k<sup>th</sup></code> largest element in the sorted order, not the <code>k<sup>th</sup></code> distinct element.</p>
 
