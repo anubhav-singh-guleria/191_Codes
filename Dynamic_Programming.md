@@ -589,7 +589,233 @@ exection -&gt; execution (insert 'u')
 </span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="z-base-1 hidden rounded border group-hover:block border-border-quaternary dark:border-border-quaternary bg-layer-02 dark:bg-layer-02 absolute -right-1.5 -top-0.5"><div class="relative cursor-pointer flex h-[22px] w-[22px] items-center justify-center bg-layer-02 dark:bg-layer-02 hover:bg-fill-tertiary dark:hover:bg-fill-tertiary rounded-[4px]" data-state="closed"><div><div data-state="closed"><div class="relative text-[12px] leading-[normal] p-[1px] before:block before:h-3 before:w-3 h-3.5 w-3.5 text-text-primary dark:text-text-primary"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" class="svg-inline--fa fa-clone absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M64 464H288c8.8 0 16-7.2 16-16V384h48v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h64v48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16zM224 304H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16V288c0 8.8 7.2 16 16 16zm-64-16V64c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V288c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64z"></path></svg></div></div></div></div></div></div></div></div>
 
-## 
+## Best Team With No Conflicts
+<div class="elfjS" data-track-load="description_content"><p>You are the manager of a basketball team. For the upcoming tournament, you want to choose the team with the highest overall score. The score of the team is the <strong>sum</strong> of scores of all the players in the team.</p>
+
+<p>However, the basketball team is not allowed to have <strong>conflicts</strong>. A <strong>conflict</strong> exists if a younger player has a <strong>strictly higher</strong> score than an older player. A conflict does <strong>not</strong> occur between players of the same age.</p>
+
+<p>Given two lists, <code>scores</code> and <code>ages</code>, where each <code>scores[i]</code> and <code>ages[i]</code> represents the score and age of the <code>i<sup>th</sup></code> player, respectively, return <em>the highest overall score of all possible basketball teams</em>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> scores = [1,3,5,10,15], ages = [1,2,3,4,5]
+<strong>Output:</strong> 34
+<strong>Explanation:</strong>&nbsp;You can choose all the players.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> scores = [4,5,6,5], ages = [2,1,2,1]
+<strong>Output:</strong> 16
+<strong>Explanation:</strong>&nbsp;It is best to choose the last 3 players. Notice that you are allowed to choose multiple people of the same age.
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> scores = [1,2,3,5], ages = [8,9,10,1]
+<strong>Output:</strong> 6
+<strong>Explanation:</strong>&nbsp;It is best to choose the first 3 players. 
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= scores.length, ages.length &lt;= 1000</code></li>
+	<li><code>scores.length == ages.length</code></li>
+	<li><code>1 &lt;= scores[i] &lt;= 10<sup>6</sup></code></li>
+	<li><code>1 &lt;= ages[i] &lt;= 1000</code></li>
+</ul>
+</div>
+
+### Solution
+<div class="FN9Jv WRmCx"><p>Actually, this problem is to find the maximum sum of increasing subsequence.<br>
+Very similiar with <a href="https://leetcode.com/problems/longest-increasing-subsequence/" target="_blank">300.Longest Increasing Subsequence</a></p>
+<p>This problem want both age and score are increasing.<br>
+We can sort by <code>age</code> and do DP for <code>scores</code>.<br>
+Sum up, 3 key points:</p>
+<ul>
+<li>Create another <code>arr</code> by <code>{age[i], socres[i]}</code> and sorted by age.</li>
+<li>For each loop, goes back and find maximum for current DP value to it maintain a increasing subsequence.</li>
+<li>The answer could in any place of the dp array.</li>
+</ul>
+<p>Time complexity: O(n * n), space complexity: O(n)</p>
+<div class="mb-6 rounded-lg px-3 py-2.5 font-menlo text-sm bg-fill-3 dark:bg-dark-fill-3"><div class="group relative" translate="no"><pre style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none; padding: 0px; margin: 0px; overflow: auto; background: transparent;"><code class="language-cpp" style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, &quot;Courier New&quot;, monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none;"><span><span class="token" style="color: rgb(86, 156, 214);">class</span><span> </span><span class="token" style="color: rgb(78, 201, 176);">Solution</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">public</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">bestTeamScore</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span class="token" style="color: rgb(212, 212, 212);">&amp;</span><span> scores</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span class="token" style="color: rgb(212, 212, 212);">&amp;</span><span> ages</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">const</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> n </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> scores</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">size</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">dp</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>n</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(106, 153, 85);">// first: age</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(106, 153, 85);">// second: scores</span><span>
+</span></span><span><span>        vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span>pair</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">&gt;&gt;</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">arr</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>n</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> 
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> i </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> i </span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span> n</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">++</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            arr</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>first </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> ages</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>            arr</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>second </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> scores</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(220, 220, 170);">sort</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>arr</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">begin</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> arr</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span class="token" style="color: rgb(220, 220, 170);">end</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> team_score </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> i </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> i </span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span> n</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">++</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            dp</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> arr</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>second</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> j </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> i </span><span class="token" style="color: rgb(212, 212, 212);">-</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> j </span><span class="token" style="color: rgb(212, 212, 212);">&gt;=</span><span> </span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">--</span><span>j</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>                </span><span class="token" style="color: rgb(106, 153, 85);">// arr sorted by age, latter element has to have high score to maintain increasing susequence</span><span>
+</span></span><span><span>                </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>arr</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>second </span><span class="token" style="color: rgb(212, 212, 212);">&gt;=</span><span> arr</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>j</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>second</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>                    </span><span class="token" style="color: rgb(106, 153, 85);">// update each status</span><span>
+</span></span><span><span>                    dp</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">max</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>dp</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> dp</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>j</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">+</span><span> arr</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>second</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> 
+</span></span><span><span>                </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(106, 153, 85);">// maximum value could in any place</span><span>
+</span></span><span><span>            team_score </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">max</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>team_score</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> dp</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>i</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> 
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> team_score</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="z-base-1 hidden rounded border group-hover:block border-border-quaternary dark:border-border-quaternary bg-layer-02 dark:bg-layer-02 absolute -right-1.5 -top-0.5"><div class="relative cursor-pointer flex h-[22px] w-[22px] items-center justify-center bg-layer-02 dark:bg-layer-02 hover:bg-fill-tertiary dark:hover:bg-fill-tertiary rounded-[4px]" data-state="closed"><div><div data-state="closed"><div class="relative text-[12px] leading-[normal] p-[1px] before:block before:h-3 before:w-3 h-3.5 w-3.5 text-text-primary dark:text-text-primary"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" class="svg-inline--fa fa-clone absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M64 464H288c8.8 0 16-7.2 16-16V384h48v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h64v48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16zM224 304H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16V288c0 8.8 7.2 16 16 16zm-64-16V64c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V288c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64z"></path></svg></div></div></div></div></div></div></div></div>
+
+
+## Matrix Chain Multiplication
+<div class="discuss-markdown-container"><p><strong>Question</strong> : <em>If a chain of matrices is given, we have to find the minimum number of the correct sequence of matrices to multiply</em>.</p><p>
+</p><ul>
+<li>The problem is not actually to perform the multiplications, but merely to decide in which order to perform the multiplications.</li>
+<li>Note:no  matter how we parenthesize the product, the result will be the same. For example, if we had four matrices A, B, C, and D, we would have:</li>
+</ul>
+<pre><code>(ABC)D = (AB)(CD) = A(BCD) = ....
+</code></pre>
+<ul>
+<li>However, the order in which we parenthesize the product affects the number of simple arithmetic operations needed to compute the product, or the efficiency. For example, suppose A is a 10 × 30 matrix, B is a 30 × 5 matrix, and C is a 5 × 60 matrix. Then,</li>
+</ul>
+<pre><code>(AB)C = (<span class="hljs-number">10</span>×<span class="hljs-number">30</span>×<span class="hljs-number">5</span>) + (<span class="hljs-number">10</span>×<span class="hljs-number">5</span>×<span class="hljs-number">60</span>) = <span class="hljs-number">1500</span> + <span class="hljs-number">3000</span> = <span class="hljs-number">4500</span> <span class="hljs-function">operations
+<span class="hljs-title">A</span><span class="hljs-params">(BC)</span> </span>= (<span class="hljs-number">30</span>×<span class="hljs-number">5</span>×<span class="hljs-number">60</span>) + (<span class="hljs-number">10</span>×<span class="hljs-number">30</span>×<span class="hljs-number">60</span>) = <span class="hljs-number">9000</span> + <span class="hljs-number">18000</span> = <span class="hljs-number">27000</span> operations.
+</code></pre>
+<ul>
+<li><strong>Clearly the first parenthesization requires less number of operations.</strong></li>
+<li><strong>Note</strong> ; We'll be given an array arr[ ] which represents the chain of matrices such that the ith matrix arr[i] is of dimension arr[i-1] x arr[i].</li>
+<li>That's why we start out 'k' i.e partition from  'i' =1 so that arr[ 1] is of dimentions arr[1-1] * arr[1] else we'll get index out of bound error Eg arr[0-1] * arr[0] is not possible</li>
+<li>So first half of the array is from i to k &amp; other half is from k+1 to j</li>
+<li>Also we need to find the cost of multiplication of these 2 resultant matrixes (first half &amp; second half) which is nothing but <strong>arr[i-1] * arr[k] * arr[j]</strong></li>
+</ul>
+<h3>Recursion</h3>
+<h4>Here is the recursive algo :</h4>
+<p></p><p><img src="https://assets.leetcode.com/users/images/f9f88962-750c-4689-bc87-13863f4a9452_1623912914.131823.png" alt="image"></p><p>
+</p><h3>Code</h3>
+
+```
+int solve(int i, int j,int arr[])
+    {
+        if(i>=j)return 0;
+
+        int ans=INT_MAX;
+        for(int k=i;k<=j-1;k++)
+        {
+            int tempAns = solve(i,k,arr) + solve(k+1,j,arr)
+                          + arr[i-1]*arr[k]*arr[j];
+            
+            ans=min(ans,tempAns);                        
+        }
+        return ans;
+    }
+    int matrixMultiplication(int N, int arr[])
+    {
+        return solve(1,N-1,arr);
+    }
+```
+
+<ul>
+<li>
+<p></p><p>The time complexity of the above naive recursive approach is exponential. Observe that the above function computes the same subproblems again and again.</p><p>
+</p></li>
+<li>
+<p></p><p>Let us saywe are given an array of 5 elements that means we are given N-1 i.e 4 matrixes .See the following recursion tree for a matrix chain of size 4.<br>
+<img src="https://assets.leetcode.com/users/images/c89a32af-1eb7-4d37-ac62-8b5b45eec22a_1623913557.5356348.png" alt="image"></p><p>
+</p></li>
+<li>
+<p></p><p>There are so many <strong>overlapping subproblems</strong> . Let's optimize it using DP !!</p><p>
+</p></li>
+</ul>
+<h3>Memoization</h3>
+<ul>
+<li>Just adding a few lines to the above code, we can reduce time complexity from exponential to cubic</li>
+</ul>
+
+```
+int dp[501][501];
+    
+    int solve(int i, int j,int arr[])
+    {
+        if(i>=j)return 0;
+        
+        if(dp[i][j]!=-1)
+        return dp[i][j];
+
+        int ans=INT_MAX;
+        for(int k=i;k<=j-1;k++)
+        {
+            int tempAns = solve(i,k,arr) + solve(k+1,j,arr)
+                          + arr[i-1]*arr[k]*arr[j];
+            
+            ans=min(ans,tempAns);
+                          
+        }
+        return dp[i][j] = ans;
+    }
+    int matrixMultiplication(int N, int arr[])
+    {
+        memset(dp,-1,sizeof(dp));
+        return solve(1,N-1,arr);
+    }
+```
+
+<h3>Bottom Up DP</h3>
+<ul>
+<li>It's a bit tricky but if you got the above logic then you woudn't face any issues. I stil, prefer the Momoization</li>
+</ul>
+
+```
+int MatrixChainOrder(int arr[], int n)
+{
+ 
+    /* For simplicity of the program, one
+    extra row and one extra column are
+    allocated in arr[][]. 0th row and 0th
+    column of arr[][] are not used */
+    int dp[n][n];
+ 
+    int i, j, k, L, q;
+ 
+    /* dp[i, j] = Minimum number of scalar
+    multiplications needed to compute the
+    matrix A[i]A[i+1]...A[j] = A[i..j] where
+    dimension of A[i] is arr[i-1] x arr[i] */
+ 
+    // cost is zero when multiplying
+    // one matrix.
+    for (i = 1; i < n; i++)
+        dp[i][i] = 0;
+ 
+    // L is chain length.
+    for (L = 2; L < n; L++)
+    {
+        for (i = 1; i < n - L + 1; i++)
+        {
+            j = i + L - 1;
+            dp[i][j] = INT_MAX;
+            for (k = i; k <= j - 1; k++)
+            {
+                // q = cost/scalar multiplications
+                q = dp[i][k] + dp[k + 1][j]
+                    + arr[i - 1] * arr[k] * arr[j];
+                if (q < dp[i][j])
+                    dp[i][j] = q;
+            }
+        }
+    }
+ 
+    return dp[1][n - 1];
+}
+```
+
+<p></p></div>
+
+
 
 
 
