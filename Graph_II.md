@@ -1,4 +1,10 @@
 ## Table of Content
+1. [Maximum Number of Non-Overlapping Substrings](#maximum-number-of-non-overlapping-substrings)
+2. [Dijkstra's Algorithm](#dijkstras-algorithm)
+3. [Bellman-Ford Algorithm](#bellman-ford-algorithm)
+4. [Floyd-Warshall Algorithm](#floyd-warshall)
+
+
 ## KOSARAJU'S ALGORITHM FOR STRONGLY CONNECTED COMPONENTS
 <p><a href="https://www.topcoder.com/thrive/articles/kosarajus-algorithm-for-strongly-connected-components" target="blank">Read Here</a>
 </p>
@@ -163,6 +169,9 @@ If we choose the first string, we cannot choose anything else and we'd get only 
 </span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code></pre><div class="z-base-1 hidden rounded border group-hover:block border-border-quaternary dark:border-border-quaternary bg-layer-02 dark:bg-layer-02 absolute -right-1.5 -top-0.5"><div class="relative cursor-pointer flex h-[22px] w-[22px] items-center justify-center bg-layer-02 dark:bg-layer-02 hover:bg-fill-tertiary dark:hover:bg-fill-tertiary rounded-[4px]" data-state="closed"><div><div data-state="closed"><div class="relative text-[12px] leading-[normal] p-[1px] before:block before:h-3 before:w-3 h-3.5 w-3.5 text-text-primary dark:text-text-primary"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" class="svg-inline--fa fa-clone absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M64 464H288c8.8 0 16-7.2 16-16V384h48v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h64v48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16zM224 304H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16V288c0 8.8 7.2 16 16 16zm-64-16V64c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V288c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64z"></path></svg></div></div></div></div></div></div></div></div></div></div>
 
+## Go To
+[Table of Content](#table-of-content)
+
 ## Dijkstra's Algorithm
 <p id="ember63" class="ember-view reader-content-blocks__paragraph">
       <!---->Dijkstra's algorithm is a fundamental and widely used algorithm for solving the single-source shortest path problem in graphs. It was developed by computer scientist Edsger W. Dijkstra and has since become one of the most important algorithms in graph theory and network analysis.<!---->
@@ -305,6 +314,8 @@ int main() {
     return 0;
 }
 ```
+## Go To
+[Table of Content](#table-of-content)
 ## Bellman-Ford Algorithm
 <p>Consider a scenario where you are presented with a weighted graph. Your objective is to determine the shortest path from a given source vertex to all other vertices. Initially, you might consider implementing Dijkstra’s algorithm for this task. However, if the graph contains negative weights, Dijkstra’s algorithm cannot be used. Therefore, we need a different algorithm that can handle such situations. The Bellman-Ford algorithm is a suitable alternative to Dijkstra’s algorithm as it accommodates negative edge weights.<br>
 This article provides a comprehensive discussion of the Bellman-Ford algorithm. It covers its functionality, complexity, highlights the disparities between Dijkstra’s and Bellman-Ford algorithms, and presents various applications of the Bellman-Ford algorithm. Before delving into the details of the Bellman-Ford algorithm, it is important to understand why negative weights in a graph pose a challenge and warrant caution.</p>
@@ -433,7 +444,8 @@ int main()
     return 0;
 }
 ```
-
+## Go To
+[Table of Content](#table-of-content)
 ## Floyd Warshall
 <h3>What is the Floyd Warshall Algorithm in C?</h3>
 <p>Floyd-Warshall Algorithm is an algorithm which follows dynamic programming approach to find the shortest path between all the pairs of vertices in a weighted graph. This algorithm works well for both the directed and undirected weighted graphs. But, it does not work for graphs that contain negative weight cycles.</p>
@@ -551,10 +563,13 @@ int main() {
   // End of Program
 }
 ```
-
+## Go To
+[Table of Content](#table-of-content)
 ## Prims Algorithm + Minimum Spanning Tree
 <a href="https://www.interviewkickstart.com/learn/prims-spanning-tree-algorithm" target="_blank">Prim's Spanning Tree Algorithm</a>
 
 
 ## Kruskals Algo
 <a href="https://www.thealgorist.com/Algo/GraphTheory/Kruskal" target="_blank">Kruskal's Algorithm</a>
+## Go To
+[Table of Content](#table-of-content)
