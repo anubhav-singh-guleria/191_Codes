@@ -1,5 +1,12 @@
 ## Table of Content
+1. [Implement Trie (Prefix Tree)](#implement-trie-prefix-tree)
+2. [Longest Word in Dictionary](#longest-word-in-dictionary)
+3. [Number of Distinct Substrings in a String](#number-of-distinct-substrings-in-a-string)
+4. [Subsets](#subsets)
+5. [Maximum XOR of Two Numbers in an Array](#maximum-xor-of-two-numbers-in-an-array)
+6. [Maximum XOR with an Element from Array](#maximum-xor-with-an-element-from-array)
 
+   
 ## Implement Trie (Prefix Tree)
 <div class="elfjS" data-track-load="description_content"><p>A <a href="https://en.wikipedia.org/wiki/Trie" target="_blank"><strong>trie</strong></a> (pronounced as "try") or <strong>prefix tree</strong> is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. There are various applications of this data structure, such as autocomplete and spellchecker.</p>
 
