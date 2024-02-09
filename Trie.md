@@ -228,4 +228,57 @@ The whole solution:</p>
 </span><span><span>	</span><span class="token" style="color: rgb(220, 220, 170);">TreeNode</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
 </span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span></span></code></pre><div class="z-base-1 hidden rounded border group-hover:block border-border-quaternary dark:border-border-quaternary bg-layer-02 dark:bg-layer-02 absolute -right-1.5 -top-0.5"><div class="relative cursor-pointer flex h-[22px] w-[22px] items-center justify-center bg-layer-02 dark:bg-layer-02 hover:bg-fill-tertiary dark:hover:bg-fill-tertiary rounded-[4px]" data-state="closed"><div><div data-state="closed"><div class="relative text-[12px] leading-[normal] p-[1px] before:block before:h-3 before:w-3 h-3.5 w-3.5 text-text-primary dark:text-text-primary"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" class="svg-inline--fa fa-clone absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M64 464H288c8.8 0 16-7.2 16-16V384h48v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h64v48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16zM224 304H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16V288c0 8.8 7.2 16 16 16zm-64-16V64c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V288c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64z"></path></svg></div></div></div></div></div></div></div></div>
 
-##
+## Number of Distinct Substrings in a String
+<p>Given a string <code>s</code>, return <em>the number of <strong>distinct</strong> substrings of</em>&nbsp;<code>s</code>.</p>
+<p>A <strong>substring</strong> of a string is obtained by deleting any number of characters (possibly zero) from the front of the string and any number (possibly zero) from the back of the string.</p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "aabbaba"
+<strong>Output:</strong> 21
+<strong>Explanation:</strong> The set of distinct strings is ["a","b","aa","bb","ab","ba","aab","abb","bab","bba","aba","aabb","abba","bbab","baba","aabba","abbab","bbaba","aabbab","abbaba","aabbaba"]
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "abcdefg"
+<strong>Output:</strong> 28
+</pre>
+<p><strong>Constraints:</strong></p>
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 500</code></li>
+	<li><code>s</code> consists of lowercase English letters.</li>
+<p><strong>Constraints:</strong></p></ul>
+
+<p><strong>Follow up:</strong> Can you solve this problem in <code>O(n)</code> time complexity?</p>
+
+
+### Solution
+Use a <code class="language-plaintext highlighter-rouge">Trie</code>, and every time a new <code class="language-plaintext highlighter-rouge">Trie</code> node created, meaning a new substring.</p>
+<p>If <code class="language-plaintext highlighter-rouge">O(n)</code> time complexity, then we need some <code class="language-plaintext highlighter-rouge">extra space</code> to store for de-dup check, like a <code class="language-plaintext highlighter-rouge">Set</code>.</p>
+
+```
+public class Solution {
+    class Trie {
+        Trie[] children = new Trie[26];
+    }
+
+    public int countDistinct(String s) {
+        Trie root = new Trie();
+        Trie current;
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            current = root;
+            for (int j = i; j < s.length(); j++) {
+
+                if (current.children[s.charAt(j) - 'a'] == null) {
+                    current.children[s.charAt(j) - 'a'] = new Trie();
+                    count++;
+                }
+
+                current = current.children[s.charAt(j) - 'a'];
+            }
+        }
+
+        return count;
+    }
+}
+```
+
+## 
