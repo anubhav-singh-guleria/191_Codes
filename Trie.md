@@ -281,4 +281,151 @@ public class Solution {
 }
 ```
 
-## 
+## Subsets
+<div class="elfjS" data-track-load="description_content"><p>Given an integer array <code>nums</code> of <strong>unique</strong> elements, return <em>all possible</em> <span data-keyword="subset" class=" cursor-pointer relative text-dark-blue-s text-sm"><div class="popover-wrapper inline-block" data-headlessui-state=""><div><div aria-expanded="false" data-headlessui-state="" id="headlessui-popover-button-:rt:"><div><em>subsets</em></div></div><div style="position: fixed; z-index: 40; inset: 0px auto auto 0px; transform: translate(466px, 182px);"></div></div></div></span> <em>(the power set)</em>.</p>
+
+<p>The solution set <strong>must not</strong> contain duplicate subsets. Return the solution in <strong>any order</strong>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> nums = [1,2,3]
+<strong>Output:</strong> [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> nums = [0]
+<strong>Output:</strong> [[],[0]]
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 10</code></li>
+	<li><code>-10 &lt;= nums[i] &lt;= 10</code></li>
+	<li>All the numbers of&nbsp;<code>nums</code> are <strong>unique</strong>.</li>
+</ul>
+</div>
+
+### Solution
+<p>Let's start from an empty subset in the output list. At each step, one takes a new integer into consideration and generates new subsets from the existing ones.</p>
+<p><img src="https://leetcode.com/problems/subsets/Figures/78/combinations.png" alt="diff"></p>
+
+```
+class Solution {
+  public List<List<Integer>> subsets(int[] nums) {
+    List<List<Integer>> output = new ArrayList();
+    output.add(new ArrayList<Integer>());
+
+    for (int num : nums) {
+      List<List<Integer>> newSubsets = new ArrayList();
+      for (List<Integer> curr : output) {
+        newSubsets.add(new ArrayList<Integer>(curr){{add(num);}});
+      }
+      for (List<Integer> curr : newSubsets) {
+        output.add(curr);
+      }
+    }
+    return output;
+  }
+}
+```
+
+## Maximum XOR of Two Numbers in an Array
+<div class="elfjS" data-track-load="description_content"><p>Given an integer array <code>nums</code>, return <em>the maximum result of </em><code>nums[i] XOR nums[j]</code>, where <code>0 &lt;= i &lt;= j &lt; n</code>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> nums = [3,10,5,25,2,8]
+<strong>Output:</strong> 28
+<strong>Explanation:</strong> The maximum result is 5 XOR 25 = 28.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> nums = [14,70,53,83,49,91,36,80,92,51,66,70]
+<strong>Output:</strong> 127
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 2 * 10<sup>5</sup></code></li>
+	<li><code>0 &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+</div>
+
+### Soliution
+<div class="FN9Jv WRmCx"><p><strong>APPROACH :</strong></p>
+<ul>
+<li>We need a data structure through which we can do the following 2 jobs easily :<br>
+1. Insert all the elements of the array into the data structure.<br>
+2. Given a Y, find maximum XOR of Y with all numbers that have been inserted.</li>
+<li>So, we can use trie.</li>
+<li>Every bit in a number has 2 possibilities : <code>0</code> &amp; <code>1</code>.</li>
+<li>So, we have 2 pointers in every Trie Node : child[0] ---&gt; pointing to <code>0</code> bit &amp; child[1] ---&gt; pointing to <code>1</code> bit.</li>
+<li>We insert all the elements into the Trie :<br>
+1. We use a bitset of size 32 (<code>bitset&lt;32&gt; bs</code>), go from the most significant bit (MSB) to the least significant bit (LSB).<br>
+2. We start at the root of the Trie &amp; check if it's child[0] or child[1] is present (not <code>NULL</code>), depending upon the current bit <code>bs[j]</code> at each bit of the number.<br>
+3. If it's present, we go to it's child, if not, we create a new Node at that child (0 bit or 1 bit) and move to it's child.</li>
+<li>We traverse the array &amp; for each element we find the maximum <code>XOR</code> possible with any other element in the array using the Trie :<br>
+1. We start at the root of the Trie and at the MSB of the number &amp; we initialize <code>ans = 0</code>.<br>
+2. If the current bit is set, we go to <code>child[0]</code> to check if it's not NULL. If it's not NULL, we add <code>1&lt;&lt;i</code> to <code>ans</code>.<br>
+3. If it's not set, we go to <code>child[1]</code> to see it's not NULL, if it's not NULL, we add <code>1&lt;&lt;i</code> to <code>ans</code>.</li>
+<li>After checking the maximum XOR possible (with any other element) at each element of the array, we update the result to maximum of previous result &amp; the current result.</li>
+<li>Finally return the maximum possible XOR.</li>
+</ul>
+<p><em>I tried my best to explain the approavh here, please refer to the code for better clarity</em></p>
+<p><strong>Time Complexity :</strong> O(n<em>x</em>logm) - <code>n = nums.size()</code>, <code>m = *max_element(nums.begin(), nums.end())</code>.</p>
+<p><strong>Code :</strong></p>
+<div class="mb-6 rounded-lg px-3 py-2.5 font-menlo text-sm bg-fill-3 dark:bg-dark-fill-3"><div class="group relative" translate="no"><pre style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none; padding: 0px; margin: 0px; overflow: auto; background: transparent;"><code class="language-cpp" style="color: rgb(212, 212, 212); font-size: 13px; text-shadow: none; font-family: Menlo, Monaco, Consolas, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, &quot;Courier New&quot;, monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none;"><span><span class="token" style="color: rgb(86, 156, 214);">class</span><span> </span><span class="token" style="color: rgb(78, 201, 176);">TrieNode</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">public</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span>
+</span></span><span><span>    TrieNode </span><span class="token" style="color: rgb(212, 212, 212);">*</span><span>child</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span class="token" style="color: rgb(181, 206, 168);">2</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span>    
+</span><span><span>    </span><span class="token" style="color: rgb(220, 220, 170);">TrieNode</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">this</span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span>child</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(156, 220, 254);">NULL</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">//for 0 bit </span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">this</span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span>child</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(156, 220, 254);">NULL</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">//for 1 bit</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">class</span><span> </span><span class="token" style="color: rgb(78, 201, 176);">Solution</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>    TrieNode </span><span class="token" style="color: rgb(212, 212, 212);">*</span><span>newNode</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span>    
+</span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">void</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">insert</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> x</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>   </span><span class="token" style="color: rgb(106, 153, 85);">//to insert each element into the Trie</span><span>
+</span></span><span><span>        TrieNode </span><span class="token" style="color: rgb(212, 212, 212);">*</span><span>t </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> newNode</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        bitset</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(181, 206, 168);">32</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">bs</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>x</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> j</span><span class="token" style="color: rgb(212, 212, 212);">=</span><span class="token" style="color: rgb(181, 206, 168);">31</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> j</span><span class="token" style="color: rgb(212, 212, 212);">&gt;=</span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> j</span><span class="token" style="color: rgb(212, 212, 212);">--</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">!</span><span>t</span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span>child</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>bs</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>j</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> t</span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span>child</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>bs</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>j</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">new</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">TrieNode</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">//start from the MSB =, move to LSB using bitset</span><span>
+</span></span><span><span>            t </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> t</span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span>child</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>bs</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>j</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>    
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span>    
+</span><span><span></span><span class="token" style="color: rgb(86, 156, 214);">public</span><span class="token" style="color: rgb(212, 212, 212);">:</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">findMaximumXOR</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>vector</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span class="token" style="color: rgb(212, 212, 212);">&amp;</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        newNode </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(86, 156, 214);">new</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">TrieNode</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">auto</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">&amp;</span><span>n </span><span class="token" style="color: rgb(212, 212, 212);">:</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">insert</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>n</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">//insert all the elements into the Trie</span><span>
+</span></span><span>        
+</span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> ans</span><span class="token" style="color: rgb(212, 212, 212);">=</span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">//Stores the maximum XOR possible so far</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">auto</span><span> n </span><span class="token" style="color: rgb(212, 212, 212);">:</span><span> nums</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            ans </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">max</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>ans</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">maxXOR</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>n</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>  </span><span class="token" style="color: rgb(106, 153, 85);">//updates the ans as we traverse the array &amp; compute max XORs at each element.</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> ans</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span>    
+</span><span><span>    </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">maxXOR</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> n</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>        TrieNode </span><span class="token" style="color: rgb(212, 212, 212);">*</span><span>t </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> newNode</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        bitset</span><span class="token" style="color: rgb(212, 212, 212);">&lt;</span><span class="token" style="color: rgb(181, 206, 168);">32</span><span class="token" style="color: rgb(212, 212, 212);">&gt;</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">bs</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>n</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> ans</span><span class="token" style="color: rgb(212, 212, 212);">=</span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> 
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">for</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(86, 156, 214);">int</span><span> j</span><span class="token" style="color: rgb(212, 212, 212);">=</span><span class="token" style="color: rgb(181, 206, 168);">31</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> j</span><span class="token" style="color: rgb(212, 212, 212);">&gt;=</span><span class="token" style="color: rgb(181, 206, 168);">0</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> j</span><span class="token" style="color: rgb(212, 212, 212);">--</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span></span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">if</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>t</span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span>child</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span class="token" style="color: rgb(212, 212, 212);">!</span><span>bs</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>j</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> ans </span><span class="token" style="color: rgb(212, 212, 212);">+=</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(181, 206, 168);">1</span><span class="token" style="color: rgb(212, 212, 212);">&lt;&lt;</span><span>j</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">,</span><span> t </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> t</span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span>child</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span class="token" style="color: rgb(212, 212, 212);">!</span><span>bs</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>j</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">//Since 1^0 = 1 &amp; 1^1 = 0, 0^0 = 0</span><span>
+</span></span><span>           
+</span><span><span>            </span><span class="token" style="color: rgb(86, 156, 214);">else</span><span> t </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> t</span><span class="token" style="color: rgb(212, 212, 212);">-&gt;</span><span>child</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>bs</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>j</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span>        </span><span class="token" style="color: rgb(86, 156, 214);">return</span><span> ans</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(212, 212, 212);">}</span><span>
+</span></span><span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span><span class="token" style="color: rgb(212, 212, 212);">;</span></span></code></pre><div class="z-base-1 hidden rounded border group-hover:block border-border-quaternary dark:border-border-quaternary bg-layer-02 dark:bg-layer-02 absolute -right-1.5 -top-0.5"><div class="relative cursor-pointer flex h-[22px] w-[22px] items-center justify-center bg-layer-02 dark:bg-layer-02 hover:bg-fill-tertiary dark:hover:bg-fill-tertiary rounded-[4px]" data-state="closed"><div><div data-state="closed"><div class="relative text-[12px] leading-[normal] p-[1px] before:block before:h-3 before:w-3 h-3.5 w-3.5 text-text-primary dark:text-text-primary"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" class="svg-inline--fa fa-clone absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M64 464H288c8.8 0 16-7.2 16-16V384h48v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h64v48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16zM224 304H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16V288c0 8.8 7.2 16 16 16zm-64-16V64c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V288c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64z"></path></svg></div></div></div></div></div></div></div>
+</div>
